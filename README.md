@@ -1,4 +1,10 @@
 # vvs-practicatesting
 Práctica VVS
 
-Empezando práctica.
+Eloy Naveira Carro.
+
+Alejandro López Sánchez.
+
+Adrián Leira Carro.
+
+Andrea Ardións Baña.
