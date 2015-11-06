@@ -58,11 +58,13 @@ public class CancionTest {
 		lista.add(cancion);
 		List<Contenido> lista2 = new ArrayList<Contenido>();
 		lista2.add(cancion2);
+		List<Contenido> lista3 = new ArrayList<Contenido>();
 		
 		assertTrue(lista.equals(cancion.buscar("cancion1")));
 		assertFalse(lista2.equals(cancion.buscar("cancion1")));
 		assertTrue(lista.equals(cancion.buscar("can")));
-		assertTrue(lista.equals(cancion.buscar("CANCION")));
+		assertFalse(lista3.equals(cancion.buscar("cancion1")));
+		
 	}
 
 }
