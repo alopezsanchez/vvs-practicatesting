@@ -5,13 +5,11 @@ import java.util.List;
 
 import es.udc.vvs.model.contenido.Contenido;
 
-
-
-
+// TODO: Auto-generated Javadoc
 /**
- * La Clase ImplementacionServicio (sin servidor de respaldo).
+ * Clase ImplementacionServicioRespaldo que implementa un servicio con respaldo.
  */
-public class ImplementacionServicio implements Servicio{
+public class ImplementacionServicioRespaldo implements Servicio{
 	
 	/** Parametro que indica cuando caduca el token. */
 	private int caduca;
@@ -26,16 +24,23 @@ public class ImplementacionServicio implements Servicio{
 	private List<Contenido> contenido;
 	
 	
-	public ImplementacionServicio(String nom) {
+	/** Servicio de respaldo. */
+	private Servicio respaldo;
+	
+	
+	public ImplementacionServicioRespaldo(Servicio respaldo,String nom) {
+		this.respaldo = respaldo;
 		this.caduca = 0;
 		this.nombre = nom;
-		this.token = null;
+		this.token = "";
 		this.contenido = new ArrayList<Contenido>();
 	}
 	
 
 	/**
 	 * Método que devuelve el nombre del Contenido.
+	 *
+	 * @return the string
 	 */
 	public String obtenerNombre() {
 		return this.nombre;
@@ -43,6 +48,8 @@ public class ImplementacionServicio implements Servicio{
 
 	/**
 	 * Método que inicializa un token.
+	 *
+	 * @return the string
 	 */
 	public String alta() {
 		String tk = GenerarToken.generateToken();
@@ -52,22 +59,27 @@ public class ImplementacionServicio implements Servicio{
 
 	/**
 	 * Método que da de baja un token.
-	 * @throws TokenInvalidoException 
+	 *
+	 * @param token the token
+	 * @throws TokenInvalidoException the token invalido exception
 	 */
 	public void baja(String token) throws TokenInvalidoException {
-		if(this.token != null && token.equals(this.token))
+		if(token.equals(this.token))
 		{
-			this.token = null;
+			this.token = "";
 		}else 
 			throw new TokenInvalidoException();
 	}
 
 	/**
 	 * Método para agregar un Contenido.
-	 * @throws TokenInvalidoException 
+	 *
+	 * @param contenido the contenido
+	 * @param token the token
+	 * @throws TokenInvalidoException the token invalido exception
 	 */
 	public void agregar(Contenido contenido, String token) throws TokenInvalidoException{
-		if(this.token != null && this.token.equals(token)){
+		if(this.token.equals(token)){
 			this.contenido.add(contenido);
 		}else 
 			throw new TokenInvalidoException();
@@ -75,10 +87,13 @@ public class ImplementacionServicio implements Servicio{
 
 	/**
 	 * Método para borrar un Contenido.
-	 * @throws TokenInvalidoException 
+	 *
+	 * @param contenido the contenido
+	 * @param token the token
+	 * @throws TokenInvalidoException the token invalido exception
 	 */
 	public void eliminar(Contenido contenido, String token) throws TokenInvalidoException {
-		if(this.token != null && this.token.equals(token)){
+		if(this.token.equals(token)){
 			this.contenido.remove(contenido);
 		}else 
 			throw new TokenInvalidoException();
@@ -86,42 +101,39 @@ public class ImplementacionServicio implements Servicio{
 
 	/**
 	 * Método para buscar Contenido/s a través del nombre.
+	 *
+	 * @param subcadena the subcadena
+	 * @param token the token
+	 * @return the list
 	 */
 	public List<Contenido> buscar(String subcadena, String token) {
 		List<Contenido> result = new ArrayList<Contenido>();
-		if(this.token == null){
-			List<Contenido> anuncios = new ArrayList<Contenido>();
-			for(Contenido cont : this.contenido)
+		if(token.equals("")){
+			/*List<Contenido> anuncios = new ArrayList<Contenido>();
+			List<Contenido> listaContenidos = new ArrayList<Contenido>(this.contenido);
+			for(Contenido cont : listaContenidos)
 			{
-				if(cont.obtenerTitulo().contains("PUBLICIDAD"))
+				if(cont.getClass() == Anuncio.class)
+				{
+					listaContenidos.remove(cont);
 					anuncios.add(cont);
-				
-				/*if(cont.getClass() == Emisora.class)
-					anuncios.addAll(cont.buscar("PUBLICIDAD"));*/
-			}
-			int j=0;
-			int numAnuncios = anuncios.size()-1;
-			if(numAnuncios>=0){
-				result.add(anuncios.get(numAnuncios));
-				numAnuncios--;
-			}
-			for(int i=0;i<this.contenido.size();i++){
-				if(this.contenido.get(i).obtenerTitulo().toLowerCase().contains(subcadena.toLowerCase())){
-					result.add(this.contenido.get(i));
-					j++;
-					if(j>=3){
-						if(numAnuncios>=0){
-							result.add(anuncios.get(numAnuncios));
-							numAnuncios--;
-						}else{
-							numAnuncios = anuncios.size()-1;
-							result.add(anuncios.get(numAnuncios));
-							numAnuncios--;
+				}
+				if(cont.getClass() == Emisora.class)
+					anuncios.addAll(cont.buscar("PUBLICIDAD"));
+				int j=0;
+				int numAnuncios = anuncios.size();
+				result.add(anuncios.get(j));
+				for(int i=0;i<this.contenido.size();i++){
+					if(this.contenido.get(i).obtenerTitulo().toLowerCase().contains(subcadena.toLowerCase())){
+						result.add(this.contenido.get(i));
+						j++;
+						if(j>=3){
+							result.add(anuncios.get(j));
+							j=0;
 						}
-						j=0;
 					}
 				}
-			}
+			}*/
 		}else{
 			for(int i=0;i<this.contenido.size();i++){
 				if(this.contenido.get(i).obtenerTitulo().toLowerCase().contains(subcadena.toLowerCase())){
@@ -131,10 +143,14 @@ public class ImplementacionServicio implements Servicio{
 			this.caduca++;
 			if(this.caduca>9){
 				this.caduca=0;
-				this.token=null;
+				this.token="";
 			}
 		}
+		if(result.isEmpty())
+			result = this.respaldo.buscar(subcadena, token);
 		return result;
 	}
 
 }
+
+
