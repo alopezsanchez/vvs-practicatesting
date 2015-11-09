@@ -1,4 +1,4 @@
-package es.udc.vvs.test.cancion;
+package es.udc.vvs.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
