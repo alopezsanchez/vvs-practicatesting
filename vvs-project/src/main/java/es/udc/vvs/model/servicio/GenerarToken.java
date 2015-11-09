@@ -12,11 +12,18 @@ public class GenerarToken {
 	private final static String generateRandomToken() {
 
 		Random randomGenerator = new Random();
-		byte[] saltAsByteArray = new byte[2];
+		byte[] saltAsByteArray = new byte[8];
 		String salt;
 
 		saltAsByteArray[0] = (byte) (randomGenerator.nextInt(NUMBER_OF_LETTERS) + A_ASCII_CODE);
 		saltAsByteArray[1] = (byte) (randomGenerator.nextInt(NUMBER_OF_LETTERS) + A_ASCII_CODE);
+		saltAsByteArray[2] = (byte) (randomGenerator.nextInt(NUMBER_OF_LETTERS) + A_ASCII_CODE);
+		saltAsByteArray[3] = (byte) (randomGenerator.nextInt(NUMBER_OF_LETTERS) + A_ASCII_CODE);
+		saltAsByteArray[4] = (byte) (randomGenerator.nextInt(NUMBER_OF_LETTERS) + A_ASCII_CODE);
+		saltAsByteArray[5] = (byte) (randomGenerator.nextInt(NUMBER_OF_LETTERS) + A_ASCII_CODE);
+		saltAsByteArray[6] = (byte) (randomGenerator.nextInt(NUMBER_OF_LETTERS) + A_ASCII_CODE);
+		saltAsByteArray[7] = (byte) (randomGenerator.nextInt(NUMBER_OF_LETTERS) + A_ASCII_CODE);
+		
 		salt = new String(saltAsByteArray);
 
 		return salt;

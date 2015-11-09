@@ -13,24 +13,20 @@ import es.udc.vvs.model.contenido.Contenido;
  */
 public class ImplementacionServicio implements Servicio{
 	
-	/** Parametro que indica cuando caduca el token. */
-	private int caduca;
-	
-	/** El token que otorga permisos de escritura. */
-	private String token;
-	
 	/** Nombre del servicio. */
 	private String nombre;
+	
+	/** Lista de usuarios registrados. */
+	private List<Usuario> usuarios;
 	
 	/** El tipo de contenido. */
 	private List<Contenido> contenido;
 	
 	
 	public ImplementacionServicio(String nom) {
-		this.caduca = 0;
 		this.nombre = nom;
-		this.token = null;
 		this.contenido = new ArrayList<Contenido>();
+		this.usuarios = new ArrayList<Usuario>();
 	}
 	
 
@@ -46,7 +42,7 @@ public class ImplementacionServicio implements Servicio{
 	 */
 	public String alta() {
 		String tk = GenerarToken.generateToken();
-		this.token = tk;
+		this.usuarios.add(new Usuario(tk));
 		return tk;
 	}
 
@@ -55,9 +51,9 @@ public class ImplementacionServicio implements Servicio{
 	 * @throws TokenInvalidoException 
 	 */
 	public void baja(String token) throws TokenInvalidoException {
-		if(this.token != null && token.equals(this.token))
+		if(this.existeUsuario(token))
 		{
-			this.token = null;
+			this.borrarUsuario(token);
 		}else 
 			throw new TokenInvalidoException();
 	}
@@ -67,7 +63,7 @@ public class ImplementacionServicio implements Servicio{
 	 * @throws TokenInvalidoException 
 	 */
 	public void agregar(Contenido contenido, String token) throws TokenInvalidoException{
-		if(this.token != null && this.token.equals(token)){
+		if(this.existeUsuario(token)){
 			this.contenido.add(contenido);
 		}else 
 			throw new TokenInvalidoException();
@@ -78,7 +74,7 @@ public class ImplementacionServicio implements Servicio{
 	 * @throws TokenInvalidoException 
 	 */
 	public void eliminar(Contenido contenido, String token) throws TokenInvalidoException {
-		if(this.token != null && this.token.equals(token)){
+		if(this.existeUsuario(token)){
 			this.contenido.remove(contenido);
 		}else 
 			throw new TokenInvalidoException();
@@ -89,52 +85,86 @@ public class ImplementacionServicio implements Servicio{
 	 */
 	public List<Contenido> buscar(String subcadena, String token) {
 		List<Contenido> result = new ArrayList<Contenido>();
-		if(this.token == null){
-			List<Contenido> anuncios = new ArrayList<Contenido>();
-			for(Contenido cont : this.contenido)
-			{
-				if(cont.obtenerTitulo().contains("PUBLICIDAD"))
-					anuncios.add(cont);
-				
-				/*if(cont.getClass() == Emisora.class)
-					anuncios.addAll(cont.buscar("PUBLICIDAD"));*/
-			}
-			int j=0;
-			int numAnuncios = anuncios.size()-1;
-			if(numAnuncios>=0){
-				result.add(anuncios.get(numAnuncios));
-				numAnuncios--;
-			}
-			for(int i=0;i<this.contenido.size();i++){
-				if(this.contenido.get(i).obtenerTitulo().toLowerCase().contains(subcadena.toLowerCase())){
-					result.add(this.contenido.get(i));
-					j++;
-					if(j>=3){
-						if(numAnuncios>=0){
-							result.add(anuncios.get(numAnuncios));
-							numAnuncios--;
-						}else{
-							numAnuncios = anuncios.size()-1;
-							result.add(anuncios.get(numAnuncios));
-							numAnuncios--;
-						}
-						j=0;
+		if(subcadena != null){
+			if(!this.existeUsuario(token)){
+				List<Contenido> anuncios = new ArrayList<Contenido>();
+				for(Contenido cont : this.contenido)
+				{
+					if(cont.obtenerTitulo().contains("PUBLICIDAD"))
+						anuncios.add(cont);
+					
+					/*if(cont.getClass() == Emisora.class)
+						anuncios.addAll(cont.buscar("PUBLICIDAD"));*/
+				}
+				int j=0;
+				int numAnuncios = anuncios.size()-1;
+				if(anuncios.size()>0){
+					if(numAnuncios>=0){
+						result.add(anuncios.get(numAnuncios));
+						numAnuncios--;
 					}
 				}
-			}
-		}else{
-			for(int i=0;i<this.contenido.size();i++){
-				if(this.contenido.get(i).obtenerTitulo().toLowerCase().contains(subcadena.toLowerCase())){
-					result.add(this.contenido.get(i));
+				for(int i=0;i<this.contenido.size();i++){
+					if(this.contenido.get(i).obtenerTitulo().toLowerCase().contains(subcadena.toLowerCase())){
+						result.add(this.contenido.get(i));
+						j++;
+						if(anuncios.size()>0){
+							if(j>=3){
+								if(numAnuncios>=0){
+									result.add(anuncios.get(numAnuncios));
+									numAnuncios--;
+								}else{
+									numAnuncios = anuncios.size()-1;
+									result.add(anuncios.get(numAnuncios));
+									numAnuncios--;
+								}
+								j=0;
+							}
+						}
+					}
 				}
-			}
-			this.caduca++;
-			if(this.caduca>9){
-				this.caduca=0;
-				this.token=null;
+			}else{
+				for(int i=0;i<this.contenido.size();i++){
+					if(this.contenido.get(i).obtenerTitulo().toLowerCase().contains(subcadena.toLowerCase())){
+						result.add(this.contenido.get(i));
+					}
+				}
+				Usuario u = this.buscarUsuario(token);
+				u.setCaduca(u.getCaduca()+1);
+				if(u.getCaduca()>9){
+					this.borrarUsuario(token);
+				}
 			}
 		}
 		return result;
 	}
+		
+	private boolean existeUsuario(String tk){
+		boolean existe = false;
+		for(Usuario u: this.usuarios){
+			if(u.getToken().equals(tk))
+				existe = true;
+		}
+		return existe;
+	}
+		
+	private void borrarUsuario(String tk){
+		Usuario uB = null;
+		for(Usuario u: this.usuarios){
+			if(u.getToken().equals(tk))
+				uB = u;
+		}
+		this.usuarios.remove(uB);
+	}
+	
+	private Usuario buscarUsuario(String tk){
+		Usuario uB = null;
+		for(Usuario u: this.usuarios){
+			if(u.getToken().equals(tk))
+				uB = u;
+		}
+		return uB;
+	}
+		
 
 }
