@@ -1,3 +1,8 @@
+/*
+ * Implementacion del interfaz Contenido.
+ * 
+ * @author Alex
+ */
 package es.udc.vvs.model.contenido;
 
 import java.util.ArrayList;
