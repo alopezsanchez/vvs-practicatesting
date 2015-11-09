@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.udc.vvs.model.contenido.Contenido;
+import es.udc.vvs.model.contenido.Emisora;
 
 
 
@@ -93,8 +94,8 @@ public class ImplementacionServicio implements Servicio{
 					if(cont.obtenerTitulo().contains("PUBLICIDAD"))
 						anuncios.add(cont);
 					
-					/*if(cont.getClass() == Emisora.class)
-						anuncios.addAll(cont.buscar("PUBLICIDAD"));*/
+					if(cont.getClass() == Emisora.class)
+						anuncios.addAll(cont.buscar("PUBLICIDAD"));
 				}
 				int j=0;
 				int numAnuncios = anuncios.size()-1;

@@ -1,4 +1,4 @@
-package es.udc.vvs.test;
+package es.udc.vvs.test.anuncio;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
