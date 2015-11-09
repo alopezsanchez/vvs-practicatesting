@@ -10,10 +10,7 @@ import es.udc.vvs.model.contenido.Contenido;
  * Clase ImplementacionServicioRespaldo que implementa un servicio con respaldo.
  */
 public class ImplementacionServicioRespaldo implements Servicio{
-	
-	/** Parametro que indica cuando caduca el token. */
-	private int caduca;
-	
+
 	/** Nombre del servicio. */
 	private String nombre;
 	
@@ -29,7 +26,6 @@ public class ImplementacionServicioRespaldo implements Servicio{
 	
 	public ImplementacionServicioRespaldo(Servicio respaldo,String nom) {
 		this.respaldo = respaldo;
-		this.caduca = 0;
 		this.nombre = nom;
 		this.usuarios = new ArrayList<Usuario>();
 		this.contenido = new ArrayList<Contenido>();
