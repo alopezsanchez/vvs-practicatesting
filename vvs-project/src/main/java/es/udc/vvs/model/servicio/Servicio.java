@@ -10,11 +10,11 @@ public interface Servicio {
 	
 	public String alta();
 	
-	public void baja(String token);
+	public void baja(String token) throws TokenInvalidoException;
 	
-	public void agregar(Contenido contenido, String token);
+	public void agregar(Contenido contenido, String token) throws TokenInvalidoException;
 	
-	public void eliminar(Contenido contenido, String token);
+	public void eliminar(Contenido contenido, String token) throws TokenInvalidoException;
 	
 	public List<Contenido> buscar(String subcadena, String token);
 

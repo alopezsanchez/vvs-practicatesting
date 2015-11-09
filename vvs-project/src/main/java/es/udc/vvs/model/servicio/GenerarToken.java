@@ -1,4 +1,4 @@
-package es.udc.vvs.model.contenido;
+package es.udc.vvs.model.servicio;
 
 import java.util.Random;
 
