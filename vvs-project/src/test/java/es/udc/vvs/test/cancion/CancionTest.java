@@ -1,3 +1,8 @@
+/*
+ * Test de la clase Cancion
+ * 
+ * @author Alex
+ */
 package es.udc.vvs.test.cancion;
 
 import static org.junit.Assert.assertEquals;
@@ -27,12 +32,18 @@ public class CancionTest {
 		
 	}
 	
+	/**
+	 * ObtenerTitulo() test.
+	 */
 	@Test
 	public void obtenerTituloTest() {
 		assertTrue(cancion.obtenerTitulo().equals("cancion1"));
 		assertFalse(cancion.obtenerTitulo().equals("cancion2"));
 	}
 	
+	/**
+	 * ObtenerDuracion() test.
+	 */
 	@Test
 	public void obtenerDuracionTest() {
 		assertEquals(cancion.obtenerDuracion(),3);
@@ -41,6 +52,9 @@ public class CancionTest {
 		assertNotEquals(cancion2.obtenerDuracion(),3);
 	}
 	
+	/**
+	 * ObtenerListaReproduccion() test.
+	 */
 	@Test
 	public void obtenerListaReproduccionTest() {
 		List<Contenido> lista = new ArrayList<Contenido>();
@@ -52,6 +66,9 @@ public class CancionTest {
 		assertTrue(lista2.equals(cancion2.obtenerListaReproduccion()));
 	}
 	
+	/**
+	 * Buscar(subcadena) test.
+	 */
 	@Test
 	public void buscarTest() {
 		List<Contenido> lista = new ArrayList<Contenido>();
