@@ -1,9 +1,13 @@
+<<<<<<< HEAD:vvs-project/src/test/java/es/udc/vvs/test/cancion/CancionTest.java
 /*
  * Test de la clase Cancion
  * 
  * @author Alex
  */
 package es.udc.vvs.test.cancion;
+=======
+package es.udc.vvs.test;
+>>>>>>> e19ad0ba5171d6a0e50684e44b7c72c8aca7e976:vvs-project/src/test/java/es/udc/vvs/test/CancionTest.java
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
