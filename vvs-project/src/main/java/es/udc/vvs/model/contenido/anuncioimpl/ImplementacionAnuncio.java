@@ -1,9 +1,11 @@
-package es.udc.vvs.model.contenido;
+package es.udc.vvs.model.contenido.anuncioimpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Anuncio implements Contenido{
+import es.udc.vvs.model.contenido.Contenido;
+
+public class ImplementacionAnuncio implements Contenido{
 	
 	private final static String titulo = "PUBLICIDAD"; /*titulo del anuncio siempre publicidad*/
 	private final static int duracion = 5; /*el tiempo que dura el anuncio es siempre 5 segundos*/
@@ -12,7 +14,7 @@ public class Anuncio implements Contenido{
 	reproducción para los anuncio*/
 	
 
-	public Anuncio(String titulo, int duracion) {
+	public ImplementacionAnuncio(String titulo, int duracion) {
 		listaReproduccion.add(this);
 	}
 

@@ -1,17 +1,23 @@
-package es.udc.vvs.model.servicio;
+package es.udc.vvs.model.servicio.servicioimpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import es.udc.vvs.model.contenido.Contenido;
-import es.udc.vvs.model.contenido.Emisora;
+import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
+import es.udc.vvs.model.servicio.Servicio;
+import es.udc.vvs.model.servicio.Usuario;
+import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
+import es.udc.vvs.model.util.servicioutil.GenerarToken;
 
-// TODO: Auto-generated Javadoc
+
+
+
 /**
- * Clase ImplementacionServicioRespaldo que implementa un servicio con respaldo.
+ * La Clase ImplementacionServicio (sin servidor de respaldo).
  */
-public class ImplementacionServicioRespaldo implements Servicio{
-
+public class ImplementacionServicio implements Servicio{
+	
 	/** Nombre del servicio. */
 	private String nombre;
 	
@@ -21,15 +27,11 @@ public class ImplementacionServicioRespaldo implements Servicio{
 	/** El tipo de contenido. */
 	private List<Contenido> contenido;
 	
-	/** Servicio de respaldo. */
-	private Servicio respaldo;
 	
-	
-	public ImplementacionServicioRespaldo(Servicio respaldo,String nom) {
-		this.respaldo = respaldo;
+	public ImplementacionServicio(String nom) {
 		this.nombre = nom;
-		this.usuarios = new ArrayList<Usuario>();
 		this.contenido = new ArrayList<Contenido>();
+		this.usuarios = new ArrayList<Usuario>();
 	}
 	
 
@@ -96,7 +98,7 @@ public class ImplementacionServicioRespaldo implements Servicio{
 					if(cont.obtenerTitulo().contains("PUBLICIDAD"))
 						anuncios.add(cont);
 					
-					if(cont.getClass() == Emisora.class)
+					if(cont.getClass() == ImplementacionEmisora.class)
 						anuncios.addAll(cont.buscar("PUBLICIDAD"));
 				}
 				int j=0;
@@ -138,13 +140,10 @@ public class ImplementacionServicioRespaldo implements Servicio{
 					this.borrarUsuario(token);
 				}
 			}
-		if(result.isEmpty())
-			result = this.respaldo.buscar(subcadena, token);
 		}
 		return result;
 	}
-	
-	
+		
 	private boolean existeUsuario(String tk){
 		boolean existe = false;
 		for(Usuario u: this.usuarios){
@@ -162,7 +161,7 @@ public class ImplementacionServicioRespaldo implements Servicio{
 		}
 		this.usuarios.remove(uB);
 	}
-
+	
 	private Usuario buscarUsuario(String tk){
 		Usuario uB = null;
 		for(Usuario u: this.usuarios){
@@ -171,7 +170,6 @@ public class ImplementacionServicioRespaldo implements Servicio{
 		}
 		return uB;
 	}
-	
+		
+
 }
-
-

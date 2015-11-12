@@ -11,28 +11,28 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.udc.vvs.model.contenido.Cancion;
-import es.udc.vvs.model.contenido.Emisora;
 import es.udc.vvs.model.contenido.Contenido;
+import es.udc.vvs.model.contenido.cancionimpl.ImplementacionCancion;
+import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
 
 public class EmisoraTest {
 	
-	private Emisora emisora1;
-	private Emisora emisora2;
+	private ImplementacionEmisora emisora1;
+	private ImplementacionEmisora emisora2;
 	
-	private Cancion cancion1;
-	private Cancion cancion2;
-	private Cancion cancion3;
+	private ImplementacionCancion cancion1;
+	private ImplementacionCancion cancion2;
+	private ImplementacionCancion cancion3;
 	
 	@Before
 	public void setUp() {
-		emisora1 = new Emisora("emisora1",0);
-		emisora2 = new Emisora("emisora2",0);
+		emisora1 = new ImplementacionEmisora("emisora1",0);
+		emisora2 = new ImplementacionEmisora("emisora2",0);
 
 		
-		cancion1 = new Cancion("cancion1",4);
-		cancion2 = new Cancion("cancion2",5);
-		cancion3 = new Cancion("cancion3",6);
+		cancion1 = new ImplementacionCancion("cancion1",4);
+		cancion2 = new ImplementacionCancion("cancion2",5);
+		cancion3 = new ImplementacionCancion("cancion3",6);
 		
 		emisora1.agregar(cancion1, null);
 		emisora1.agregar(cancion2, cancion1);

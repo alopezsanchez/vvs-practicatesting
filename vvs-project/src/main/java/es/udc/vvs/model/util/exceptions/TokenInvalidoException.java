@@ -1,4 +1,4 @@
-package es.udc.vvs.model.servicio;
+package es.udc.vvs.model.util.exceptions;
 
 // TODO: Auto-generated Javadoc
 /**

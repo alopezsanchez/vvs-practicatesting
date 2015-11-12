@@ -17,19 +17,19 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.udc.vvs.model.contenido.Cancion;
 import es.udc.vvs.model.contenido.Contenido;
+import es.udc.vvs.model.contenido.cancionimpl.ImplementacionCancion;
 
 
 public class CancionTest {
 
-	private Cancion cancion;
-	private Cancion cancion2;
+	private ImplementacionCancion cancion;
+	private ImplementacionCancion cancion2;
 	
 	@Before
 	public void setUp() {
-		cancion = new Cancion("cancion1",3);
-		cancion2 = new Cancion("cancion2",5);
+		cancion = new ImplementacionCancion("cancion1",3);
+		cancion2 = new ImplementacionCancion("cancion2",5);
 		
 	}
 	

@@ -3,19 +3,21 @@
  * 
  * @author Alex
  */
-package es.udc.vvs.model.contenido;
+package es.udc.vvs.model.contenido.cancionimpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cancion implements Contenido{
+import es.udc.vvs.model.contenido.Contenido;
+
+public class ImplementacionCancion implements Contenido{
 	
 	private String titulo;
 	private int duracion;
 	private List<Contenido> listaReproduccion = new ArrayList<Contenido>();
 	
 
-	public Cancion(String titulo, int duracion) {
+	public ImplementacionCancion(String titulo, int duracion) {
 		this.titulo = titulo;
 		this.duracion = duracion;
 		listaReproduccion.add(this);

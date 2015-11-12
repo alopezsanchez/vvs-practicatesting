@@ -3,6 +3,7 @@ package es.udc.vvs.model.servicio;
 import java.util.List;
 
 import es.udc.vvs.model.contenido.Contenido;
+import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
 
 public interface Servicio {
 	

@@ -1,15 +1,17 @@
-package es.udc.vvs.model.contenido;
+package es.udc.vvs.model.contenido.emisoraimpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Emisora implements Contenido{
+import es.udc.vvs.model.contenido.Contenido;
+
+public class ImplementacionEmisora implements Contenido{
 	private String titulo;
 	private int duracion;
 	private List<Contenido> listaReproduccion = new ArrayList<Contenido>();
 	
 
-	public Emisora(String titulo, int duracion) {
+	public ImplementacionEmisora(String titulo, int duracion) {
 		this.titulo = titulo;
 		this.duracion = duracion;
 		

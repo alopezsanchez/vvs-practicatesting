@@ -10,18 +10,18 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.udc.vvs.model.contenido.Anuncio;
 import es.udc.vvs.model.contenido.Contenido;
+import es.udc.vvs.model.contenido.anuncioimpl.ImplementacionAnuncio;
 
 public class AnuncioTest {
 
-	private Anuncio anuncio1, anuncio2, anuncio3;
+	private ImplementacionAnuncio anuncio1, anuncio2, anuncio3;
 	
 	@Before
 	public void setUp() {
-		anuncio1 = new Anuncio("PUBLICIDAD",5);
-		anuncio2 = new Anuncio("PUBLICIDAD",5);
-		anuncio3 = new Anuncio("Error", 3);
+		anuncio1 = new ImplementacionAnuncio("PUBLICIDAD",5);
+		anuncio2 = new ImplementacionAnuncio("PUBLICIDAD",5);
+		anuncio3 = new ImplementacionAnuncio("Error", 3);
 	}
 	
 	@Test
