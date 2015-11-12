@@ -18,7 +18,7 @@
 
 Por equipos, crear, implementar e probar o proxecto descrito no seguinte diagrama UML:
 
-![alt text](images/enunciado.png)
+![alt text](doc/images/enunciado.png)
 
 O proxecto debe desenvolverse en GitHub e este integrarse con Travis-CI desde o primeiro momento.
 
