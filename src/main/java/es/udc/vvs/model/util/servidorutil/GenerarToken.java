@@ -1,4 +1,4 @@
-package es.udc.vvs.model.util.servicioutil;
+package es.udc.vvs.model.util.servidorutil;
 
 import java.util.Random;
 

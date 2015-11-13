@@ -1,4 +1,4 @@
-package es.udc.vvs.model.servicio;
+package es.udc.vvs.model.servidor;
 
 
 // TODO: Auto-generated Javadoc

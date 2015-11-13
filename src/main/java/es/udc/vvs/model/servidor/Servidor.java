@@ -1,11 +1,11 @@
-package es.udc.vvs.model.servicio;
+package es.udc.vvs.model.servidor;
 
 import java.util.List;
 
 import es.udc.vvs.model.contenido.Contenido;
 import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
 
-public interface Servicio {
+public interface Servidor {
 	
 	public String obtenerNombre();
 	
