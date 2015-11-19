@@ -67,7 +67,7 @@ public class ImplementacionServidor implements Servidor{
 	 * @throws TokenInvalidoException 
 	 */
 	public void agregar(Contenido contenido, String token) throws TokenInvalidoException{
-		if(token.equals(MASTER_TOKEN)){
+		if((token!=null) && (token.equals(MASTER_TOKEN))){
 			this.contenido.add(contenido);
 		}else 
 			throw new TokenInvalidoException();
@@ -78,7 +78,7 @@ public class ImplementacionServidor implements Servidor{
 	 * @throws TokenInvalidoException 
 	 */
 	public void eliminar(Contenido contenido, String token) throws TokenInvalidoException {
-		if(token.equals(MASTER_TOKEN)){
+		if((token!=null) && (token.equals(MASTER_TOKEN))){
 			this.contenido.remove(contenido);
 		}else 
 			throw new TokenInvalidoException();
@@ -145,28 +145,31 @@ public class ImplementacionServidor implements Servidor{
 		
 	private boolean existeUsuario(String tk){
 		boolean existe = false;
-		for(Usuario u: this.usuarios){
-			if(u.getToken().equals(tk))
-				existe = true;
-		}
+		if(tk!=null)
+			for(Usuario u: this.usuarios){
+				if(u.getToken().equals(tk))
+					existe = true;
+			}
 		return existe;
 	}
 		
 	private void borrarUsuario(String tk){
 		Usuario uB = null;
-		for(Usuario u: this.usuarios){
-			if(u.getToken().equals(tk))
-				uB = u;
-		}
+		if(tk!=null)
+			for(Usuario u: this.usuarios){
+				if(u.getToken().equals(tk))
+					uB = u;
+			}
 		this.usuarios.remove(uB);
 	}
 	
 	private Usuario buscarUsuario(String tk){
 		Usuario uB = null;
-		for(Usuario u: this.usuarios){
-			if(u.getToken().equals(tk))
-				uB = u;
-		}
+		if(tk!=null)
+			for(Usuario u: this.usuarios){
+				if(u.getToken().equals(tk))
+					uB = u;
+			}
 		return uB;
 	}
 		
