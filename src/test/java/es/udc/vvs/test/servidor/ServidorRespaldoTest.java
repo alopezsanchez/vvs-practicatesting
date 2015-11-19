@@ -15,6 +15,8 @@ import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
 import es.udc.vvs.model.servidor.servidorimpl.ImplementacionServidor;
 import es.udc.vvs.model.servidor.servidorimpl.ImplementacionServidorRespaldo;
 import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
+import static es.udc.vvs.model.util.servidorutil.ModelConstants.*;
+
 
 public class ServidorRespaldoTest {
 	
@@ -48,19 +50,19 @@ public class ServidorRespaldoTest {
 		ImplementacionEmisora emisora = new ImplementacionEmisora("Emisora1",55);
 		
 		try {
-			servidorRespaldo.agregar(anuncio1, tk);
-			servidorRespaldo.agregar(cancion1, tk);
-			servidorRespaldo.agregar(cancion2, tk);
-			servidorRespaldo.agregar(cancion3, tk);
-			servidorRespaldo.agregar(cancion4, tk);
-			servidorRespaldo.agregar(cancion5, tk);
-			servidorRespaldo.agregar(anuncio2, tk);
-			servidorRespaldo.agregar(cancion6, tk);
-			servidorRespaldo.agregar(cancion7, tk);
-			servidorRespaldo.agregar(anuncio3, tk);
-			servidorRespaldo.agregar(anuncio4, tk);
-			servidorRespaldo.agregar(cancion8, tk);
-			servidorRespaldo.agregar(emisora, tk);
+			servidorRespaldo.agregar(anuncio1, MASTER_TOKEN);
+			servidorRespaldo.agregar(cancion1, MASTER_TOKEN);
+			servidorRespaldo.agregar(cancion2, MASTER_TOKEN);
+			servidorRespaldo.agregar(cancion3, MASTER_TOKEN);
+			servidorRespaldo.agregar(cancion4, MASTER_TOKEN);
+			servidorRespaldo.agregar(cancion5, MASTER_TOKEN);
+			servidorRespaldo.agregar(anuncio2, MASTER_TOKEN);
+			servidorRespaldo.agregar(cancion6, MASTER_TOKEN);
+			servidorRespaldo.agregar(cancion7, MASTER_TOKEN);
+			servidorRespaldo.agregar(anuncio3, MASTER_TOKEN);
+			servidorRespaldo.agregar(anuncio4, MASTER_TOKEN);
+			servidorRespaldo.agregar(cancion8, MASTER_TOKEN);
+			servidorRespaldo.agregar(emisora, MASTER_TOKEN);
 		} catch (TokenInvalidoException e) {
 			e.printStackTrace();
 		}
@@ -90,7 +92,7 @@ public class ServidorRespaldoTest {
 	public void agregarTest() {
 		boolean agregado = true;
 		try {
-			servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD",5), token);
+			servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD",5), MASTER_TOKEN);
 		} catch (TokenInvalidoException e) {
 			agregado = false;
 		}
@@ -111,7 +113,7 @@ public class ServidorRespaldoTest {
 	@Test(expected = TokenInvalidoException.class)
 	public void agregarTokenInvalidoTest() throws TokenInvalidoException 
 	{
-	servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), null);
+		servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), token);
 	}
 	
 	
@@ -127,8 +129,8 @@ public class ServidorRespaldoTest {
 		ImplementacionCancion cancion2 = new ImplementacionCancion("Cancion2",7);
 
 		try {
-			servidor.agregar(cancion1, token);
-			servidor.agregar(cancion2, token);
+			servidor.agregar(cancion1, MASTER_TOKEN);
+			servidor.agregar(cancion2, MASTER_TOKEN);
 		} catch (TokenInvalidoException e1) {
 			agregado = false;
 		}
@@ -139,7 +141,7 @@ public class ServidorRespaldoTest {
 		
 		boolean borrado = true;
 		try {
-			servidor.eliminar(cancion1, token);
+			servidor.eliminar(cancion1, MASTER_TOKEN);
 		} catch (TokenInvalidoException e) {
 			borrado = false;
 		}
@@ -160,7 +162,7 @@ public class ServidorRespaldoTest {
 		boolean agregado = true;
 		Contenido contenido = new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5);
 		try {
-			servidor.agregar(contenido, token);
+			servidor.agregar(contenido, MASTER_TOKEN);
 		} catch (TokenInvalidoException e) {
 			agregado = false;
 		}
@@ -169,7 +171,7 @@ public class ServidorRespaldoTest {
 		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
 		assertEquals(1,resultado.size());
 
-		servidor.eliminar(contenido, null);
+		servidor.eliminar(contenido, token);
 	}
 	
 	
@@ -191,14 +193,14 @@ public class ServidorRespaldoTest {
 		ImplementacionCancion cancion8 = new ImplementacionCancion("hhhhhh",6);
 		
 		try {
-			servidor.agregar(cancion1, token);
-			servidor.agregar(cancion2, token);
-			servidor.agregar(cancion3, token);
-			servidor.agregar(cancion4, token);
-			servidor.agregar(cancion5, token);
-			servidor.agregar(cancion6, token);
-			servidor.agregar(cancion7, token);
-			servidor.agregar(cancion8, token);
+			servidor.agregar(cancion1, MASTER_TOKEN);
+			servidor.agregar(cancion2, MASTER_TOKEN);
+			servidor.agregar(cancion3, MASTER_TOKEN);
+			servidor.agregar(cancion4, MASTER_TOKEN);
+			servidor.agregar(cancion5, MASTER_TOKEN);
+			servidor.agregar(cancion6, MASTER_TOKEN);
+			servidor.agregar(cancion7, MASTER_TOKEN);
+			servidor.agregar(cancion8, MASTER_TOKEN);
 		} catch (TokenInvalidoException e) {
 			agregado = false;
 		}

@@ -1,5 +1,7 @@
 package es.udc.vvs.model.servidor.servidorimpl;
 
+import static es.udc.vvs.model.util.servidorutil.ModelConstants.MASTER_TOKEN;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import es.udc.vvs.model.servidor.Servidor;
 import es.udc.vvs.model.servidor.Usuario;
 import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
 import es.udc.vvs.model.util.servidorutil.GenerarToken;
+
 
 // TODO: Auto-generated Javadoc
 /**
@@ -70,7 +73,7 @@ public class ImplementacionServidorRespaldo implements Servidor{
 	 * @throws TokenInvalidoException 
 	 */
 	public void agregar(Contenido contenido, String token) throws TokenInvalidoException{
-		if(this.existeUsuario(token)){
+		if(token.equals(MASTER_TOKEN)){
 			this.contenido.add(contenido);
 		}else 
 			throw new TokenInvalidoException();
@@ -81,7 +84,7 @@ public class ImplementacionServidorRespaldo implements Servidor{
 	 * @throws TokenInvalidoException 
 	 */
 	public void eliminar(Contenido contenido, String token) throws TokenInvalidoException {
-		if(this.existeUsuario(token)){
+		if(token.equals(MASTER_TOKEN)){
 			this.contenido.remove(contenido);
 		}else 
 			throw new TokenInvalidoException();
