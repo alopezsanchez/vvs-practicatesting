@@ -1,6 +1,7 @@
 package es.udc.vvs.test.servidor;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import es.udc.vvs.model.contenido.cancionimpl.ImplementacionCancion;
 import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
 import es.udc.vvs.model.servidor.servidorimpl.ImplementacionServidor;
 import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
+import static es.udc.vvs.model.util.servidorutil.ModelConstants.*;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -53,7 +55,7 @@ public class ServidorTest {
 	public void agregarTest() {
 		boolean agregado = true;
 		try {
-			servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD",5), token);
+			servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD",5), MASTER_TOKEN);
 		} catch (TokenInvalidoException e) {
 			agregado = false;
 		}
@@ -74,7 +76,9 @@ public class ServidorTest {
 	@Test(expected = TokenInvalidoException.class)
 	public void agregarTokenInvalidoTest() throws TokenInvalidoException 
 	{
-	servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), null);
+
+		servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), token);
+	
 	}
 	
 	
@@ -86,7 +90,7 @@ public class ServidorTest {
 		boolean agregado = true;
 		Contenido contenido = new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5);
 		try {
-			servidor.agregar(contenido, token);
+			servidor.agregar(contenido, MASTER_TOKEN);
 		} catch (TokenInvalidoException e) {
 			agregado = false;
 		}
@@ -97,7 +101,7 @@ public class ServidorTest {
 		
 		boolean borrado = true;
 		try {
-			servidor.eliminar(contenido, token);
+			servidor.eliminar(contenido, MASTER_TOKEN);
 		} catch (TokenInvalidoException e) {
 			borrado = false;
 		}
@@ -116,18 +120,23 @@ public class ServidorTest {
 	@Test(expected = TokenInvalidoException.class)
 	public void eliminarTokenInvalidoTest() throws TokenInvalidoException {
 		boolean agregado = true;
+		boolean eliminado = true;
+		
 		Contenido contenido = new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5);
+		
 		try {
-			servidor.agregar(contenido, token);
+			servidor.agregar(contenido, MASTER_TOKEN);
 		} catch (TokenInvalidoException e) {
 			agregado = false;
 		}
+		
 		assertTrue(agregado);
 		
 		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
 		assertEquals(1,resultado.size());
-
-		servidor.eliminar(contenido, null);
+		
+		servidor.eliminar(contenido, token);
+		
 	}
 	
 	
@@ -136,7 +145,8 @@ public class ServidorTest {
 	 */
 	@Test
 	public void buscarTest() {
-		
+	
+	
 		boolean agregado = true;
 		
 		ImplementacionAnuncio anuncio1 = new ImplementacionAnuncio("PUBLICIDAD",5);
@@ -154,19 +164,19 @@ public class ServidorTest {
 		ImplementacionEmisora emisora = new ImplementacionEmisora("Emisora1",55);
 		
 		try {
-			servidor.agregar(anuncio1, token);
-			servidor.agregar(cancion1, token);
-			servidor.agregar(cancion2, token);
-			servidor.agregar(cancion3, token);
-			servidor.agregar(cancion4, token);
-			servidor.agregar(cancion5, token);
-			servidor.agregar(anuncio2, token);
-			servidor.agregar(cancion6, token);
-			servidor.agregar(cancion7, token);
-			servidor.agregar(anuncio3, token);
-			servidor.agregar(anuncio4, token);
-			servidor.agregar(cancion8, token);
-			servidor.agregar(emisora, token);
+			servidor.agregar(anuncio1, MASTER_TOKEN);
+			servidor.agregar(cancion1, MASTER_TOKEN);
+			servidor.agregar(cancion2, MASTER_TOKEN);
+			servidor.agregar(cancion3, MASTER_TOKEN);
+			servidor.agregar(cancion4, MASTER_TOKEN);
+			servidor.agregar(cancion5, MASTER_TOKEN);
+			servidor.agregar(anuncio2, MASTER_TOKEN);
+			servidor.agregar(cancion6, MASTER_TOKEN);
+			servidor.agregar(cancion7, MASTER_TOKEN);
+			servidor.agregar(anuncio3, MASTER_TOKEN);
+			servidor.agregar(anuncio4, MASTER_TOKEN);
+			servidor.agregar(cancion8, MASTER_TOKEN);
+			servidor.agregar(emisora, MASTER_TOKEN);
 		} catch (TokenInvalidoException e) {
 			agregado = false;
 		}
