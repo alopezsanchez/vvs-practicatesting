@@ -143,7 +143,7 @@ public class ImplementacionServidor implements Servidor{
 		return result;
 	}
 		
-	private boolean existeUsuario(String tk){
+	public boolean existeUsuario(String tk){
 		boolean existe = false;
 		if(tk!=null)
 			for(Usuario u: this.usuarios){

@@ -3,6 +3,8 @@ package es.udc.vvs.test.servidor;
 import static es.udc.vvs.model.util.servidorutil.ModelConstants.MASTER_TOKEN;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+
 
 import java.util.List;
 
@@ -45,6 +47,39 @@ public class ServidorTest {
 	{
 		String esperado = "servidor";
 		assertEquals(esperado,servidor.obtenerNombre());
+	}
+	
+
+	/**
+	 * Test alta usuario.
+	 */
+	@Test
+	public void altaUsuario(){
+		assertTrue(servidor.alta() != null);	
+	}
+	
+
+	/**
+	 * Test baja usuario.
+	 */
+	@Test
+	public void bajaUsuario() throws TokenInvalidoException{
+		String tk = servidor.alta();
+
+			servidor.baja(tk);
+			assertFalse(servidor.existeUsuario(tk));
+
+	}
+	
+	/**
+	 * Test baja usuario no existente.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void bajaUsuarioNoExiste() throws TokenInvalidoException {
+		String tk ="notexist";
+		servidor.baja(tk);
 	}
 	
 	/**

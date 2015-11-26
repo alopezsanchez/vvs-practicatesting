@@ -1,6 +1,7 @@
 package es.udc.vvs.test.servidor;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -83,6 +84,38 @@ public class ServidorRespaldoTest {
 	{
 		String esperado = "servidorConRespaldo";
 		assertEquals(esperado,servidor.obtenerNombre());
+	}
+	
+	/**
+	 * Test alta usuario.
+	 */
+	@Test
+	public void altaUsuario(){
+		assertTrue(servidor.alta() != null);	
+	}
+	
+
+	/**
+	 * Test baja usuario.
+	 */
+	@Test
+	public void bajaUsuario() throws TokenInvalidoException{
+		String tk = servidor.alta();
+
+			servidor.baja(tk);
+			assertFalse(servidor.existeUsuario(tk));
+
+	}
+	
+	/**
+	 * Test baja usuario no existente.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void bajaUsuarioNoExiste() throws TokenInvalidoException {
+		String tk ="notexist";
+		servidor.baja(tk);
 	}
 	
 	/**
