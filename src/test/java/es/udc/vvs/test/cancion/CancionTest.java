@@ -24,12 +24,14 @@ import org.junit.Test;
 
 import es.udc.vvs.model.contenido.Contenido;
 import es.udc.vvs.model.contenido.cancionimpl.ImplementacionCancion;
+import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
 
 
 public class CancionTest {
 
 	private ImplementacionCancion cancion;
 	private ImplementacionCancion cancion2;
+	private ImplementacionCancion cancion3;
 	
 	@Before
 	public void setUp() {
@@ -46,9 +48,9 @@ public class CancionTest {
 			
 		for (String anyString : Iterables.toIterable(PrimitiveGenerators.printableStrings())) {
 			cancion = new ImplementacionCancion(anyString,3);
-			assertTrue(cancion.obtenerTitulo().equals(anyString));
-			System.out.println(anyString);
+			String otherString = PrimitiveGenerators.printableStrings().next();
 			
+			assertTrue(cancion.obtenerTitulo().equals(anyString));		
 		}	
 	}
 	
@@ -63,7 +65,7 @@ public class CancionTest {
 		for (Integer anyInteger : Iterables.toIterable(generator)) {
 			cancion = new ImplementacionCancion("cancion1",anyInteger);
 			assertTrue(anyInteger.equals(cancion.obtenerDuracion()));
-			System.out.println(anyInteger);
+			//System.out.println(anyInteger);
 		}
 	}
 	
@@ -73,12 +75,12 @@ public class CancionTest {
 	@Test
 	public void obtenerListaReproduccionTest() {
 		
-		for (Pair<ImplementacionCancion, List<ImplementacionCancion>> pair : Iterables.toIterable(new CancionListGenerator())) {
+		/*for (Pair<ImplementacionCancion, List<ImplementacionCancion>> pair : Iterables.toIterable(new CancionListGenerator())) {
 			ImplementacionCancion anyCancion = pair.getFirst();
 			List<ImplementacionCancion> anyList = pair.getSecond();
 			
 			assertTrue(anyList.get(0).equals(anyCancion.obtenerListaReproduccion().get(0)));
-		}
+		}*/
 		/*List<Contenido> lista = new ArrayList<Contenido>();
 		lista.add(cancion);
 		List<Contenido> lista2 = new ArrayList<Contenido>();
@@ -86,6 +88,19 @@ public class CancionTest {
 		
 		assertTrue(lista.equals(cancion.obtenerListaReproduccion()));
 		assertTrue(lista2.equals(cancion2.obtenerListaReproduccion()));*/
+		
+		
+		CancionGenerator cGen = new CancionGenerator();
+		List<Contenido> listaReproduccion = new ArrayList<Contenido>();
+		
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(cGen)) {
+			//cancion3 = new ImplementacionCancion("cancion3",0);
+			listaReproduccion.add(anyCancion);
+			
+			//assertEquals(listaReproduccion,anyCancion.obtenerListaReproduccion());
+			System.out.println(listaReproduccion.size());
+			System.out.println(anyCancion.obtenerListaReproduccion().size());
+		}
 	}
 	
 	
@@ -112,7 +127,7 @@ public class CancionTest {
 			ImplementacionCancion anyCancion = cGen.next();
 			List<ImplementacionCancion> l = lGen.next();
 			
-			//l.add(anyCancion);
+			l.add(anyCancion);
 			
 			return new Pair(anyCancion,l);
 		}
@@ -128,7 +143,19 @@ public class CancionTest {
 	 */
 	@Test
 	public void buscarTest() {
+		
+		Generator<ImplementacionCancion> cGen = new CancionGenerator();
 		List<Contenido> lista = new ArrayList<Contenido>();
+		
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(cGen)) {
+			lista.add(anyCancion);
+			ImplementacionCancion otherCancion = cGen.next();
+			// COMO HACER QUE LA LISTA SEA IGUAL?
+			assertEquals(anyCancion,anyCancion.buscar(anyCancion.obtenerTitulo()).get(0));
+			assertNotEquals(lista,otherCancion.buscar(anyCancion.obtenerTitulo()));
+		}
+		
+		/*List<Contenido> lista = new ArrayList<Contenido>();
 		lista.add(cancion);
 		List<Contenido> lista2 = new ArrayList<Contenido>();
 		lista2.add(cancion2);
@@ -137,7 +164,7 @@ public class CancionTest {
 		assertTrue(lista.equals(cancion.buscar("cancion1")));
 		assertFalse(lista2.equals(cancion.buscar("cancion1")));
 		assertTrue(lista.equals(cancion.buscar("can")));
-		assertFalse(lista3.equals(cancion.buscar("cancion1")));
+		assertFalse(lista3.equals(cancion.buscar("cancion1")));*/
 		
 	}
 

@@ -52,7 +52,7 @@ public class ImplementacionCancion implements Contenido{
 
 	public void eliminar(Contenido contenido) { }
 
-	@Override
+	/*@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -87,7 +87,7 @@ public class ImplementacionCancion implements Contenido{
 		} else if (!titulo.equals(other.titulo))
 			return false;
 		return true;
-	}
+	}*/
 	
 	
 
