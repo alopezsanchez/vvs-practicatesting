@@ -1,20 +1,19 @@
 package es.udc.vvs.test.mockito;
 
 import static es.udc.vvs.model.util.servidorutil.ModelConstants.MASTER_TOKEN;
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import es.udc.vvs.model.contenido.Contenido;
+import es.udc.vvs.model.contenido.anuncioimpl.ImplementacionAnuncio;
 import es.udc.vvs.model.contenido.cancionimpl.ImplementacionCancion;
+import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
 import es.udc.vvs.model.servidor.Servidor;
 import es.udc.vvs.model.servidor.servidorimpl.ImplementacionServidor;
 import es.udc.vvs.model.servidor.servidorimpl.ImplementacionServidorRespaldo;
@@ -27,13 +26,23 @@ import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
 public class TestMockito {
 	
 	/** El servidor. */
-	private Servidor servidor = mock(ImplementacionServidor.class);
+	private Servidor servidor;
 	
 	/** El servidor de respaldo. */
-	private Servidor servidorRespaldo = mock(ImplementacionServidorRespaldo.class);
+	private Servidor servidorRespaldo;
+	
+	/** Anuncio. */
+	private Contenido anuncio = mock(ImplementacionAnuncio.class);
+	
+	/** Cancion. */
+	private Contenido cancion = mock(ImplementacionCancion.class);
+	
+	/** Emisora. */
+	private Contenido emisora = mock(ImplementacionEmisora.class);
 
-	/** Un contenido. */
-	private Contenido contenido;
+	
+	/** Emisora. */
+	private Contenido contenido = new ImplementacionCancion("cancion",5);
 	
 	/**
 	 * Metodo de inicializacion de los stubs
@@ -41,8 +50,9 @@ public class TestMockito {
 	@Before
 	public void init() {
 
+		//STUBS PARA SERVICIO
 		//stubs para obtención del nombre de servicio
-		when(servidor.obtenerNombre()).thenReturn("ServidorPrueba");
+		/*when(servidor.obtenerNombre()).thenReturn("ServidorPrueba");
 		when(servidorRespaldo.obtenerNombre()).thenReturn("ServidorPruebaRespaldo");
 		
 		//stubs para alta en el servicio
@@ -68,7 +78,20 @@ public class TestMockito {
 		//stubs para buscar Contenidos en el servicio
 		when(servidor.buscar("Cancion", "")).thenReturn(new ArrayList<Contenido>());
 		when(servidorRespaldo.buscar("Cancion", "")).thenReturn(new ArrayList<Contenido>());
+		*/
 		
+		servidor = new ImplementacionServidor("servidorPrueba");
+		servidorRespaldo = new ImplementacionServidorRespaldo(servidor,"servidorRespaldoPrueba");
+		
+		//STUBS PARA CLASES DE CONTENIDO
+		when(anuncio.obtenerTitulo()).thenReturn("PUBLICIDAD anuncio");
+		when(cancion.obtenerTitulo()).thenReturn("cancion");
+		when(emisora.obtenerTitulo()).thenReturn("emisora");
+		
+		List<Contenido> anuncios = new ArrayList<Contenido>();
+		anuncios.add(anuncio);
+		
+		when(emisora.buscar("PUBLICIDAD")).thenReturn(anuncios);
 	}
 	
 	/**
@@ -77,22 +100,11 @@ public class TestMockito {
 	@Test
 	public void testObtenerNombreServidor()
 	{
-		//ejecutamos la lógica a probar
-		String nombre = servidor.obtenerNombre();
+		servidor.obtenerNombre();
+		assertEquals("servidorPrueba",servidor.obtenerNombre());
 		
-		//verificamos que se haya invocado el método
-		verify(servidor, times(1)).obtenerNombre();
-		
-		assertEquals("ServidorPrueba",nombre);
-		
-		
-		//ejecutamos la lógica a probar
-		nombre = servidorRespaldo.obtenerNombre();
-		
-		//verificamos que se haya invocado el método
-		verify(servidorRespaldo, times(1)).obtenerNombre();
-		
-		assertEquals("ServidorPruebaRespaldo",nombre);
+		servidorRespaldo.obtenerNombre();
+		assertEquals("servidorRespaldoPrueba",servidorRespaldo.obtenerNombre());
 	}
 	
 	/**
@@ -101,19 +113,11 @@ public class TestMockito {
 	@Test
 	public void testAltaServidor()
 	{
-		servidor.alta();
-		verify(servidor, times(1)).alta();
+		String token = servidor.alta();
+		assertNotNull(token);
 		
-		servidor.alta();
-		verify(servidor, times(2)).alta();
-		
-		servidor.alta();
-		verify(servidor, times(3)).alta();
-		
-		
-		servidorRespaldo.alta();
-		servidorRespaldo.alta();
-		verify(servidorRespaldo, times(2)).alta();
+		token = servidorRespaldo.alta();
+		assertNotNull(token);
 	}
 	
 	/**
