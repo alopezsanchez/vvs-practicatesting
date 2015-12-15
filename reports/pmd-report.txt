@@ -1,0 +1,775 @@
+src/main/java/es/udc/vvs/model/contenido/Contenido.java:10:	headerCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/Contenido.java:17:	Avoid modifiers which are implied by the context
+src/main/java/es/udc/vvs/model/contenido/Contenido.java:24:	Avoid modifiers which are implied by the context
+src/main/java/es/udc/vvs/model/contenido/Contenido.java:32:	Avoid modifiers which are implied by the context
+src/main/java/es/udc/vvs/model/contenido/Contenido.java:35:	Comment is too large: Line too long
+src/main/java/es/udc/vvs/model/contenido/Contenido.java:38:	Comment is too large: Line too long
+src/main/java/es/udc/vvs/model/contenido/Contenido.java:40:	Avoid modifiers which are implied by the context
+src/main/java/es/udc/vvs/model/contenido/Contenido.java:49:	Avoid modifiers which are implied by the context
+src/main/java/es/udc/vvs/model/contenido/Contenido.java:57:	Avoid modifiers which are implied by the context
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:8:	headerCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:10:	Variables that are final and static should be all capitals, 'titulo' is not all capitals.
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:10:	fieldCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:11:	Variables that are final and static should be all capitals, 'duracion' is not all capitals.
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:11:	fieldCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:13:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:13:	Private field 'listaReproduccion' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:13:	fieldCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:17:	Avoid unused constructor parameters such as 'duracion'.
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:17:	Avoid unused constructor parameters such as 'titulo'.
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:17:	Parameter 'duracion' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:17:	Parameter 'titulo' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:17:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:21:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:25:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:29:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:33:	Parameter 'subcadena' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:33:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:36:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:45:	Document empty method body
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:45:	Parameter 'contenido' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:45:	Parameter 'predecesor' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:45:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:48:	Document empty method body
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:48:	Parameter 'contenido' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/anuncioimpl/ImplementacionAnuncio.java:48:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:13:	headerCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:15:	Private field 'titulo' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:15:	fieldCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:16:	Private field 'duracion' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:16:	fieldCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:17:	Private field 'listaReproduccion' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:17:	fieldCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:20:	Parameter 'duracion' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:20:	Parameter 'titulo' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:20:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:27:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:31:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:35:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:39:	Parameter 'subcadena' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:39:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:42:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:51:	Document empty method body
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:51:	Parameter 'contenido' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:51:	Parameter 'predecesor' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:51:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:53:	Document empty method body
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:53:	Parameter 'contenido' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/cancionimpl/ImplementacionCancion.java:53:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:8:	headerCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:9:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:9:	Private field 'titulo' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:9:	fieldCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:10:	fieldCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:11:	Private field 'listaReproduccion' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:11:	fieldCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:14:	Parameter 'duracion' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:14:	Parameter 'titulo' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:14:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:20:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:24:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:28:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:32:	Parameter 'subcadena' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:32:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:34:	Local variable 'temp' could be declared final
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:42:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:42:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:43:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:52:	Parameter 'contenido' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:52:	Parameter 'predecesor' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:52:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:54:	Avoid if (x != y) ..; else ..;
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:56:	Local variable 'pos' could be declared final
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:71:	Parameter 'contenido' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/contenido/emisoraimpl/ImplementacionEmisora.java:71:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:8:	headerCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:10:	Avoid modifiers which are implied by the context
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:10:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:12:	Avoid modifiers which are implied by the context
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:12:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:14:	Avoid modifiers which are implied by the context
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:14:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:16:	Avoid modifiers which are implied by the context
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:16:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:18:	Avoid modifiers which are implied by the context
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:18:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:20:	Avoid modifiers which are implied by the context
+src/main/java/es/udc/vvs/model/servidor/Servidor.java:20:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/Usuario.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/servidor/Usuario.java:11:	Private field 'token' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/servidor/Usuario.java:17:	Parameter 'token' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/Usuario.java:17:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/Usuario.java:48:	Parameter 'caduca' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:18:	The class 'ImplementacionServidor' has a Modified Cyclomatic Complexity of 4 (Highest = 16).
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:18:	The class 'ImplementacionServidor' has a Standard Cyclomatic Complexity of 4 (Highest = 16).
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:21:	Private field 'nombre' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:24:	Private field 'usuarios' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:27:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:27:	Private field 'contenido' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:30:	Parameter 'nom' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:30:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:48:	Avoid variables with short names like tk
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:48:	Local variable 'tk' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:57:	Parameter 'token' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:69:	Parameter 'contenido' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:69:	Parameter 'token' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:70:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:70:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:70:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:70:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:80:	Parameter 'contenido' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:80:	Parameter 'token' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:81:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:81:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:81:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:81:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:90:	Found 'UR'-anomaly for variable 'cont' (lines '90'-'97').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:90:	Parameter 'subcadena' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:90:	Parameter 'token' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:90:	The method 'buscar' has a Modified Cyclomatic Complexity of 16.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:90:	The method 'buscar' has a Standard Cyclomatic Complexity of 16.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:91:	Local variable 'result' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:93:	Avoid if (x != y) ..; else ..;
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:94:	Local variable 'anuncios' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:95:	Local variable 'cont' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:97:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:97:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:98:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:100:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:101:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:101:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:103:	Avoid variables with short names like j
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:103:	Found 'DD'-anomaly for variable 'j' (lines '103'-'114').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:103:	Found 'DU'-anomaly for variable 'j' (lines '103'-'144').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:104:	Found 'DU'-anomaly for variable 'numAnuncios' (lines '104'-'144').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:104:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:105:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:105:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:106:	These nested if statements could be combined
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:106:	These nested if statements could be combined
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:107:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:107:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:108:	Found 'DU'-anomaly for variable 'numAnuncios' (lines '108'-'144').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:112:	When doing a String.toLowerCase()/toUpperCase() call, use a Locale
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:113:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:113:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:113:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:114:	Found 'DD'-anomaly for variable 'j' (lines '114'-'114').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:114:	Found 'DU'-anomaly for variable 'j' (lines '114'-'144').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:115:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:115:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:116:	Avoid using Literals in Conditional Statements
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:116:	These nested if statements could be combined
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:116:	These nested if statements could be combined
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:118:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:118:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:119:	Found 'DU'-anomaly for variable 'numAnuncios' (lines '119'-'144').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:121:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:122:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:122:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:123:	Found 'DU'-anomaly for variable 'numAnuncios' (lines '123'-'144').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:125:	Found 'DD'-anomaly for variable 'j' (lines '125'-'114').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:125:	Found 'DU'-anomaly for variable 'j' (lines '125'-'144').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:132:	When doing a String.toLowerCase()/toUpperCase() call, use a Locale
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:133:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:133:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:133:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:136:	Avoid variables with short names like u
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:136:	Local variable 'u' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:137:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:137:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:138:	Avoid using Literals in Conditional Statements
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:138:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:146:	Avoid variables with short names like tk
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:146:	Found 'UR'-anomaly for variable 'u' (lines '146'-'150').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:146:	Parameter 'tk' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:146:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:147:	Found 'DD'-anomaly for variable 'existe' (lines '147'-'151').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:149:	Local variable 'u' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:150:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:150:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:151:	Found 'DD'-anomaly for variable 'existe' (lines '151'-'151').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:156:	Avoid variables with short names like tk
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:156:	Found 'UR'-anomaly for variable 'u' (lines '156'-'160').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:156:	Parameter 'tk' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:157:	Avoid variables with short names like uB
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:157:	Found 'DD'-anomaly for variable 'uB' (lines '157'-'161').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:159:	Local variable 'u' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:160:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:160:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:161:	Found 'DD'-anomaly for variable 'uB' (lines '161'-'161').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:166:	Avoid variables with short names like tk
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:166:	Found 'UR'-anomaly for variable 'u' (lines '166'-'170').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:166:	Parameter 'tk' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:167:	Avoid variables with short names like uB
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:167:	Found 'DD'-anomaly for variable 'uB' (lines '167'-'171').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:169:	Local variable 'u' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:170:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:170:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidor.java:171:	Found 'DD'-anomaly for variable 'uB' (lines '171'-'171').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:20:	The class 'ImplementacionServidorRespaldo' has a Modified Cyclomatic Complexity of 4 (Highest = 17).
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:20:	The class 'ImplementacionServidorRespaldo' has a Standard Cyclomatic Complexity of 4 (Highest = 17).
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:23:	Private field 'nombre' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:26:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:26:	Private field 'usuarios' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:29:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:29:	Private field 'contenido' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:32:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:32:	Private field 'respaldo' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:35:	Parameter 'nom' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:35:	Parameter 'respaldo' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:35:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:54:	Avoid variables with short names like tk
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:54:	Local variable 'tk' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:63:	Parameter 'token' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:75:	Parameter 'contenido' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:75:	Parameter 'token' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:76:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:76:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:76:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:76:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:86:	Parameter 'contenido' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:86:	Parameter 'token' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:87:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:87:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:87:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:87:	Useless parentheses.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:96:	Found 'UR'-anomaly for variable 'cont' (lines '96'-'103').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:96:	Parameter 'subcadena' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:96:	Parameter 'token' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:96:	The method 'buscar' has a Modified Cyclomatic Complexity of 17.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:96:	The method 'buscar' has a Standard Cyclomatic Complexity of 17.
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:99:	Avoid if (x != y) ..; else ..;
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:100:	Local variable 'anuncios' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:101:	Local variable 'cont' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:103:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:103:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:104:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:106:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:107:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:107:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:109:	Avoid variables with short names like j
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:109:	Found 'DD'-anomaly for variable 'j' (lines '109'-'120').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:109:	Found 'DU'-anomaly for variable 'j' (lines '109'-'152').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:110:	Found 'DU'-anomaly for variable 'numAnuncios' (lines '110'-'152').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:110:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:111:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:111:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:112:	These nested if statements could be combined
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:112:	These nested if statements could be combined
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:113:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:113:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:114:	Found 'DU'-anomaly for variable 'numAnuncios' (lines '114'-'152').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:118:	When doing a String.toLowerCase()/toUpperCase() call, use a Locale
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:119:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:119:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:119:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:120:	Found 'DD'-anomaly for variable 'j' (lines '120'-'120').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:120:	Found 'DU'-anomaly for variable 'j' (lines '120'-'152').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:121:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:121:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:122:	Avoid using Literals in Conditional Statements
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:122:	These nested if statements could be combined
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:122:	These nested if statements could be combined
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:124:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:124:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:125:	Found 'DU'-anomaly for variable 'numAnuncios' (lines '125'-'152').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:127:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:128:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:128:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:129:	Found 'DU'-anomaly for variable 'numAnuncios' (lines '129'-'152').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:131:	Found 'DD'-anomaly for variable 'j' (lines '131'-'120').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:131:	Found 'DU'-anomaly for variable 'j' (lines '131'-'152').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:138:	When doing a String.toLowerCase()/toUpperCase() call, use a Locale
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:139:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:139:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:139:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:142:	Avoid variables with short names like u
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:142:	Local variable 'u' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:143:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:143:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:144:	Avoid using Literals in Conditional Statements
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:144:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:148:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:155:	Avoid variables with short names like tk
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:155:	Found 'UR'-anomaly for variable 'u' (lines '155'-'159').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:155:	Parameter 'tk' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:155:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:156:	Found 'DD'-anomaly for variable 'existe' (lines '156'-'160').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:158:	Local variable 'u' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:159:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:159:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:160:	Found 'DD'-anomaly for variable 'existe' (lines '160'-'160').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:165:	Avoid variables with short names like tk
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:165:	Found 'UR'-anomaly for variable 'u' (lines '165'-'169').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:165:	Parameter 'tk' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:166:	Avoid variables with short names like uB
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:166:	Found 'DD'-anomaly for variable 'uB' (lines '166'-'170').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:168:	Local variable 'u' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:169:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:169:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:170:	Found 'DD'-anomaly for variable 'uB' (lines '170'-'170').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:175:	Avoid variables with short names like tk
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:175:	Found 'UR'-anomaly for variable 'u' (lines '175'-'179').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:175:	Parameter 'tk' is not assigned and could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:176:	Avoid variables with short names like uB
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:176:	Found 'DD'-anomaly for variable 'uB' (lines '176'-'180').
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:178:	Local variable 'u' could be declared final
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:179:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:179:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/es/udc/vvs/model/servidor/servidorimpl/ImplementacionServidorRespaldo.java:180:	Found 'DD'-anomaly for variable 'uB' (lines '180'-'180').
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:5:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:5:	headerCommentRequirement Required
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:7:	fieldCommentRequirement Required
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:8:	fieldCommentRequirement Required
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:9:	fieldCommentRequirement Required
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:14:	Local variable 'randomGenerator' could be declared final
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:15:	Found 'DD'-anomaly for variable 'saltAsByteArray' (lines '15'-'18').
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:18:	Found 'DD'-anomaly for variable 'saltAsByteArray' (lines '18'-'19').
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:19:	Found 'DD'-anomaly for variable 'saltAsByteArray' (lines '19'-'20').
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:20:	Found 'DD'-anomaly for variable 'saltAsByteArray' (lines '20'-'21').
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:21:	Found 'DD'-anomaly for variable 'saltAsByteArray' (lines '21'-'22').
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:22:	Found 'DD'-anomaly for variable 'saltAsByteArray' (lines '22'-'23').
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:23:	Found 'DD'-anomaly for variable 'saltAsByteArray' (lines '23'-'24').
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:24:	Found 'DD'-anomaly for variable 'saltAsByteArray' (lines '24'-'25').
+src/main/java/es/udc/vvs/model/util/servidorutil/GenerarToken.java:33:	publicMethodCommentRequirement Required
+src/main/java/es/udc/vvs/model/util/servidorutil/ModelConstants.java:4:	headerCommentRequirement Required
+src/main/java/es/udc/vvs/model/util/servidorutil/ModelConstants.java:6:	fieldCommentRequirement Required
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:16:	Each class should declare at least one constructor
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:16:	headerCommentRequirement Required
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:18:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:18:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:18:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:18:	fieldCommentRequirement Required
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:21:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:22:	The String literal "PUBLICIDAD" appears 6 times in this file; the first occurrence is on line 22
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:28:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:28:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:29:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:29:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:30:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:30:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:31:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:31:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:34:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:34:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:35:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:35:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:39:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:39:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:44:	Use assertSame(x, y) instead of assertTrue(x==y), or assertNotSame(x,y) vs assertFalse(x==y)
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:48:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:48:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:49:	Local variable 'lista' could be declared final
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:51:	Local variable 'lista2' could be declared final
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:55:	Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:56:	Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:60:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:60:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:61:	Local variable 'lista' could be declared final
+src/test/java/es/udc/vvs/test/anuncio/AnuncioTest.java:64:	Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:24:	Each class should declare at least one constructor
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:24:	headerCommentRequirement Required
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:26:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:26:	fieldCommentRequirement Required
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:27:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:27:	fieldCommentRequirement Required
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:30:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:31:	The String literal "cancion1" appears 5 times in this file; the first occurrence is on line 31
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:40:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:41:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:41:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:42:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:42:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:49:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:60:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:61:	Local variable 'lista' could be declared final
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:63:	Local variable 'lista2' could be declared final
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:66:	Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:67:	Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:74:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:75:	Local variable 'lista' could be declared final
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:77:	Local variable 'lista2' could be declared final
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:79:	Local variable 'lista3' could be declared final
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:81:	Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+src/test/java/es/udc/vvs/test/cancion/CancionTest.java:83:	Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:18:	Each class should declare at least one constructor
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:18:	headerCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:20:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:20:	fieldCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:21:	fieldCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:23:	fieldCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:24:	fieldCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:25:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:25:	fieldCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:28:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:40:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:40:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:42:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:42:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:43:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:43:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:47:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:47:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:49:	Local variable 'lista' could be declared final
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:58:	Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:67:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:67:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:81:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:82:	Local variable 'lista' could be declared final
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:89:	Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:93:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:93:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:94:	Local variable 'lista' could be declared final
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:101:	Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:102:	Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:107:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:107:	publicMethodCommentRequirement Required
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:108:	Local variable 'lista' could be declared final
+src/test/java/es/udc/vvs/test/emisora/EmisoraTest.java:120:	Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:22:	Each class should declare at least one constructor
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:22:	headerCommentRequirement Required
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:25:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:25:	Perhaps 'servidorRespaldo' could be replaced by a local variable.
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:27:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:27:	fieldCommentRequirement Required
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:30:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:38:	Avoid variables with short names like tk
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:38:	Local variable 'tk' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:39:	Local variable 'anuncio1' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:39:	The String literal "PUBLICIDAD" appears 9 times in this file; the first occurrence is on line 39
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:40:	Local variable 'cancion1' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:41:	Local variable 'cancion2' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:42:	Local variable 'cancion3' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:43:	Local variable 'cancion4' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:44:	Local variable 'cancion5' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:45:	Local variable 'anuncio2' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:46:	Local variable 'cancion6' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:47:	Local variable 'cancion7' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:48:	Local variable 'anuncio3' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:49:	Local variable 'anuncio4' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:50:	Local variable 'cancion8' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:51:	Local variable 'emisora' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:68:	Avoid printStackTrace(); use a logger call instead.
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:68:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:73:	Avoid printStackTrace(); use a logger call instead.
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:73:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:85:	Local variable 'esperado' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:94:	Use assertNull(x) instead of assertTrue(x==null), or assertNotNull(x) vs assertFalse(x==null)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:103:	Avoid variables with short names like tk
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:103:	Local variable 'tk' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:117:	Avoid variables with short names like tk
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:117:	Local variable 'tk' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:125:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:126:	Found 'DD'-anomaly for variable 'agregado' (lines '126'-'130').
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:134:	Local variable 'resultado' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:135:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:136:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:136:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:136:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:137:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:137:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:137:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:149:	The String literal "PUBLICIDAD dfsdfsd" appears 4 times in this file; the first occurrence is on line 149
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:169:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:171:	Found 'DD'-anomaly for variable 'agregado' (lines '171'-'180').
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:173:	Local variable 'cancion1' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:174:	Local variable 'cancion2' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:185:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:187:	Found 'DD'-anomaly for variable 'borrado' (lines '187'-'191').
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:196:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:207:	Found 'DD'-anomaly for variable 'agregado' (lines '207'-'212').
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:208:	Local variable 'contenido' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:216:	Local variable 'resultado' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:217:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:230:	Found 'DD'-anomaly for variable 'agregado' (lines '230'-'237').
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:232:	Local variable 'contenido' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:242:	Local variable 'resultado' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:243:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:254:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:256:	Found 'DD'-anomaly for variable 'agregado' (lines '256'-'277').
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:258:	Local variable 'cancion1' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:259:	Local variable 'cancion2' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:260:	Local variable 'cancion3' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:261:	Local variable 'cancion4' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:262:	Local variable 'cancion5' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:263:	Local variable 'cancion6' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:264:	Local variable 'cancion7' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:265:	Local variable 'cancion8' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:283:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:284:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:284:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:284:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:284:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:285:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:285:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:285:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:285:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:289:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:290:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:290:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:290:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:290:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:291:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:291:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:291:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:291:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:292:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:292:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:292:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:292:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:293:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:293:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:293:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:293:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:294:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:294:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:294:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:294:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:295:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:295:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:295:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:295:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:301:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:304:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:304:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:304:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:306:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:306:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:306:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:307:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:307:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:307:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:308:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:308:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:308:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:310:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:310:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:310:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:312:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:312:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:312:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:313:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:313:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:313:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:314:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:314:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:314:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:316:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:316:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorRespaldoTest.java:316:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:25:	Each class should declare at least one constructor
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:28:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:31:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:48:	Local variable 'esperado' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:58:	Use assertNull(x) instead of assertTrue(x==null), or assertNotNull(x) vs assertFalse(x==null)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:67:	Avoid variables with short names like tk
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:67:	Local variable 'tk' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:81:	Avoid variables with short names like tk
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:81:	Local variable 'tk' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:89:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:90:	Found 'DD'-anomaly for variable 'agregado' (lines '90'-'94').
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:92:	The String literal "PUBLICIDAD" appears 11 times in this file; the first occurrence is on line 92
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:98:	Local variable 'resultado' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:99:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:100:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:100:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:100:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:101:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:101:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:101:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:113:	The String literal "PUBLICIDAD dfsdfsd" appears 5 times in this file; the first occurrence is on line 113
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:133:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:134:	Found 'DD'-anomaly for variable 'agregado' (lines '134'-'139').
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:135:	Local variable 'contenido' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:144:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:146:	Found 'DD'-anomaly for variable 'borrado' (lines '146'-'150').
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:155:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:166:	Found 'DD'-anomaly for variable 'agregado' (lines '166'-'173').
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:168:	Local variable 'contenido' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:178:	Local variable 'resultado' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:179:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:193:	Found 'DD'-anomaly for variable 'agregado' (lines '193'-'200').
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:195:	Local variable 'contenido' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:205:	Local variable 'resultado' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:206:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:217:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:220:	Found 'DD'-anomaly for variable 'agregado' (lines '220'-'251').
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:222:	Local variable 'anuncio1' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:223:	Local variable 'cancion1' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:224:	Local variable 'cancion2' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:225:	Local variable 'cancion3' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:226:	Local variable 'cancion4' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:227:	Local variable 'cancion5' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:228:	Local variable 'anuncio2' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:229:	Local variable 'cancion6' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:230:	Local variable 'cancion7' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:231:	Local variable 'anuncio3' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:232:	Local variable 'anuncio4' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:233:	Local variable 'cancion8' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:234:	Local variable 'emisora' could be declared final
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:257:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:258:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:258:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:258:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:258:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:259:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:259:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:259:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:259:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:263:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:264:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:264:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:264:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:264:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:265:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:265:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:265:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:265:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:266:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:266:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:266:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:266:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:267:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:267:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:267:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:267:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:268:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:268:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:268:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:268:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:269:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:269:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:269:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:269:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:270:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:270:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:270:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:270:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:271:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:271:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:271:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:271:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:275:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:276:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:276:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:276:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:276:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:277:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:277:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:277:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:277:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:281:	Found 'DD'-anomaly for variable 'resultado' (lines '281'-'281').
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:281:	Found 'DD'-anomaly for variable 'resultado' (lines '281'-'284').
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:283:	Comment is too large: Line too long
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:285:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:288:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:288:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:288:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:290:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:290:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:290:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:291:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:291:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:291:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:292:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:292:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:292:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:294:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:294:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:294:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:296:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:296:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:296:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:297:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:297:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:297:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:298:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:298:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:298:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:300:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:300:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:300:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:303:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:303:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:303:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:303:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:304:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:304:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:304:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:304:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:305:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:305:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:305:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:305:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:306:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:306:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:306:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:306:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:307:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:307:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:307:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:307:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:308:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:308:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:308:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:308:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:309:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:309:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:309:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:309:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:310:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:310:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:310:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:310:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:311:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:311:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:311:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:311:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:312:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:312:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:312:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:312:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:313:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:313:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:313:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:313:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:314:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:314:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:314:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:314:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:315:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:315:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:315:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:315:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:316:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:316:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:316:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:316:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:317:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:317:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:317:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:317:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:318:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:318:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:318:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:318:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:319:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:319:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:319:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:319:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:320:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:320:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:320:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/es/udc/vvs/test/servidor/ServidorTest.java:320:	Potential violation of Law of Demeter (object not created locally)
