@@ -33,6 +33,7 @@ public class EmisoraTest {
 		
 		emisora1 = new ImplementacionEmisora("emisora1",0);
 		emisora2 = new ImplementacionEmisora("emisora2",0);
+		emisora3 = new ImplementacionEmisora("emisora3",0);
 		
 		cancion1 = new ImplementacionCancion("cancion1",4);
 		cancion2 = new ImplementacionCancion("cancion2",5);
@@ -98,11 +99,13 @@ public class EmisoraTest {
 		List<Contenido> listaReproduccion = new ArrayList<Contenido>();
 		
 		for (ImplementacionCancion anyCancion : Iterables.toIterable(cGen)) {
-			emisora3 = new ImplementacionEmisora("emisora3",0);
 			emisora3.agregar(anyCancion, null);
+			int i = emisora3.obtenerListaReproduccion().size();
 			listaReproduccion.add(anyCancion);
 			
-			assertEquals(anyCancion,emisora3.obtenerListaReproduccion().get(0));
+			// Al insertar al final, se comprueba que la ultima cancion de la lista de reproduccion es igual a la añadida.
+			// ya que el equals de las listas no funciona.
+			assertEquals(anyCancion,emisora3.obtenerListaReproduccion().get(i-1));
 			
 		}
 

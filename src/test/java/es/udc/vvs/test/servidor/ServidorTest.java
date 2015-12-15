@@ -17,6 +17,9 @@ import es.udc.vvs.model.contenido.cancionimpl.ImplementacionCancion;
 import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
 import es.udc.vvs.model.servidor.servidorimpl.ImplementacionServidor;
 import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
+import net.java.quickcheck.Generator;
+import net.java.quickcheck.generator.PrimitiveGenerators;
+import net.java.quickcheck.generator.iterable.Iterables;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -45,8 +48,10 @@ public class ServidorTest {
 	@Test
 	public void obtenerNombreTest() 
 	{
-		String esperado = "servidor";
-		assertEquals(esperado,servidor.obtenerNombre());
+		for (String anyString : Iterables.toIterable(PrimitiveGenerators.printableStrings())) {
+			servidor = new ImplementacionServidor(anyString);
+			assertEquals(anyString,servidor.obtenerNombre());
+		}
 	}
 	
 
@@ -55,7 +60,10 @@ public class ServidorTest {
 	 */
 	@Test
 	public void altaUsuario(){
-		assertTrue(servidor.alta() != null);	
+		
+		for(String anyToken : Iterables.toIterable(new UsuarioGenerator())) {
+			assertTrue(anyToken != null);
+		}
 	}
 	
 
@@ -64,11 +72,11 @@ public class ServidorTest {
 	 */
 	@Test
 	public void bajaUsuario() throws TokenInvalidoException{
-		String tk = servidor.alta();
-
-			servidor.baja(tk);
-			assertFalse(servidor.existeUsuario(tk));
-
+		
+		for(String anyToken : Iterables.toIterable(new UsuarioGenerator())) {
+			servidor.baja(anyToken);
+			assertFalse(servidor.existeUsuario(anyToken));
+		}
 	}
 	
 	/**
@@ -82,23 +90,28 @@ public class ServidorTest {
 		servidor.baja(tk);
 	}
 	
+	
 	/**
 	 * Test agregar Contenido.
 	 */
 	@Test
 	public void agregarTest() {
-		boolean agregado = true;
-		try {
-			servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD",5), MASTER_TOKEN);
-		} catch (TokenInvalidoException e) {
-			agregado = false;
-		}
-		assertTrue(agregado);
 		
-		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
-		assertEquals(1,resultado.size());
-		assertEquals("PUBLICIDAD",resultado.get(0).obtenerTitulo());
-		assertEquals(5,resultado.get(0).obtenerDuracion());
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			boolean agregado = true;
+			try {
+				servidor.agregar(anyCancion, MASTER_TOKEN);
+			} catch (TokenInvalidoException e) {
+				agregado = false;
+			}
+			assertTrue(agregado);
+			
+			List<Contenido> resultado = servidor.buscar(anyCancion.obtenerTitulo(), token);
+			int i = resultado.size();
+			//Comprueba si el contenido añadido es igual al ultimo elemento de la lista
+			assertEquals(anyCancion,resultado.get(i-1));
+		}
+		
 	}
 	
 	
@@ -110,7 +123,10 @@ public class ServidorTest {
 	@Test(expected = TokenInvalidoException.class)
 	public void agregarTokenInvalidoTest() throws TokenInvalidoException 
 	{
-		servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), token);
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			servidor.agregar(anyCancion, token);
+		}
+		
 	}
 	
 	
@@ -122,7 +138,10 @@ public class ServidorTest {
 	@Test(expected = TokenInvalidoException.class)
 	public void agregarTokenNuloTest() throws TokenInvalidoException 
 	{
-		servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), null);
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			servidor.agregar(anyCancion, null);
+		}
+		
 	}
 	
 	
@@ -131,28 +150,32 @@ public class ServidorTest {
 	 */
 	@Test
 	public void eliminarTest() {
-		boolean agregado = true;
-		Contenido contenido = new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5);
-		try {
-			servidor.agregar(contenido, MASTER_TOKEN);
-		} catch (TokenInvalidoException e) {
-			agregado = false;
+		
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			boolean agregado = true;
+			try {
+				servidor.agregar(anyCancion, MASTER_TOKEN);
+			} catch (TokenInvalidoException e) {
+				agregado = false;
+			}
+			assertTrue(agregado);
+			
+			List<Contenido> resultado = servidor.buscar(anyCancion.obtenerTitulo(), token);
+			int i = resultado.size();
+			//Comprueba si el contenido añadido es igual al ultimo elemento de la lista
+			assertEquals(anyCancion,resultado.get(i-1));
+			
+			boolean borrado = true;
+			try {
+				servidor.eliminar(anyCancion, MASTER_TOKEN);
+			} catch (TokenInvalidoException e) {
+				borrado = false;
+			}
+			assertTrue(borrado);
+			resultado = servidor.buscar(anyCancion.obtenerTitulo(), token);
+			assertEquals(0,resultado.size());
 		}
-		assertTrue(agregado);
 		
-		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
-		assertEquals(1,resultado.size());
-		
-		boolean borrado = true;
-		try {
-			servidor.eliminar(contenido, MASTER_TOKEN);
-		} catch (TokenInvalidoException e) {
-			borrado = false;
-		}
-		assertTrue(borrado);
-		
-		resultado = servidor.buscar("PUBLICIDAD", token);
-		assertEquals(0,resultado.size());
 	}
 	
 	
@@ -163,23 +186,22 @@ public class ServidorTest {
 	 */
 	@Test(expected = TokenInvalidoException.class)
 	public void eliminarTokenInvalidoTest() throws TokenInvalidoException {
-		boolean agregado = true;
 		
-		Contenido contenido = new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5);
-		
-		try {
-			servidor.agregar(contenido, MASTER_TOKEN);
-		} catch (TokenInvalidoException e) {
-			agregado = false;
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			boolean agregado = true;	
+			try {
+				servidor.agregar(anyCancion, MASTER_TOKEN);
+			} catch (TokenInvalidoException e) {
+				agregado = false;
+			}
+			
+			assertTrue(agregado);
+			
+			List<Contenido> resultado = servidor.buscar(anyCancion.obtenerTitulo(), token);
+			assertEquals(1,resultado.size());
+			
+			servidor.eliminar(anyCancion, token);
 		}
-		
-		assertTrue(agregado);
-		
-		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
-		assertEquals(1,resultado.size());
-		
-		servidor.eliminar(contenido, token);
-		
 	}
 	
 	
@@ -190,23 +212,23 @@ public class ServidorTest {
 	 */
 	@Test(expected = TokenInvalidoException.class)
 	public void eliminarTokenNuloTest() throws TokenInvalidoException {
-		boolean agregado = true;
 		
-		Contenido contenido = new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5);
-		
-		try {
-			servidor.agregar(contenido, MASTER_TOKEN);
-		} catch (TokenInvalidoException e) {
-			agregado = false;
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			boolean agregado = true;
+						
+			try {
+				servidor.agregar(anyCancion, MASTER_TOKEN);
+			} catch (TokenInvalidoException e) {
+				agregado = false;
+			}
+			
+			assertTrue(agregado);
+			
+			List<Contenido> resultado = servidor.buscar(anyCancion.obtenerTitulo(), token);
+			assertEquals(1,resultado.size());
+			
+			servidor.eliminar(anyCancion, null);
 		}
-		
-		assertTrue(agregado);
-		
-		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
-		assertEquals(1,resultado.size());
-		
-		servidor.eliminar(contenido, null);
-		
 	}
 	
 	
@@ -320,5 +342,30 @@ public class ServidorTest {
 		assertEquals(anuncio3.obtenerDuracion(),resultado.get(8).obtenerDuracion());
 	}
 
+	
+	class UsuarioGenerator implements Generator<String> {
+		Generator<String> sGen = PrimitiveGenerators.printableStrings();
+		
+		public String next() {
+			String anyToken = servidor.alta();
+			
+			return anyToken;
+		}
+		
+	}
+	
+	
+	class CancionGenerator implements Generator<ImplementacionCancion> {
+		Generator<Integer> iGen = PrimitiveGenerators.integers(-50,50);
+		Generator<String> sGen = PrimitiveGenerators.printableStrings();
+		
+		public ImplementacionCancion next() {
+			String anyTitulo = sGen.next();
+			int anyDuracion = iGen.next();
+			
+			return new ImplementacionCancion(anyTitulo,anyDuracion);
+		}
+		
+	}
 
 }
