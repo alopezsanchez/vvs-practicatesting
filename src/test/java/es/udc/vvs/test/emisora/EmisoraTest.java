@@ -30,18 +30,14 @@ public class EmisoraTest {
 	
 	@Before
 	public void setUp() {
+		
 		emisora1 = new ImplementacionEmisora("emisora1",0);
 		emisora2 = new ImplementacionEmisora("emisora2",0);
-
 		
 		cancion1 = new ImplementacionCancion("cancion1",4);
 		cancion2 = new ImplementacionCancion("cancion2",5);
 		cancion3 = new ImplementacionCancion("cancion3",6);
-		
-		emisora1.agregar(cancion1, null);
-		emisora1.agregar(cancion2, cancion1);
-		emisora2.agregar(cancion3, null);
-		
+
 	}
 	
 	@Test
@@ -49,11 +45,11 @@ public class EmisoraTest {
 		
 		for (String anyString : Iterables.toIterable(PrimitiveGenerators.printableStrings())) {
 			emisora1 = new ImplementacionEmisora(anyString,0);
-			String otherString = PrimitiveGenerators.printableStrings().next();
 			
 			assertTrue(emisora1.obtenerTitulo().equals(anyString));
 		}
 	}
+	
 	
 	@Test
 	public void agregarTest(){
@@ -63,16 +59,6 @@ public class EmisoraTest {
 			
 			assertEquals(anyCancion,emisora1.buscar(anyCancion.obtenerTitulo()).get(0));
 		}
-			
-		/*List<Contenido> lista = new ArrayList<Contenido>();
-		lista.add(cancion1);
-		lista.add(cancion2);
-	
-		assertTrue(emisora1.obtenerListaReproduccion().get(0).equals(lista.get(0)));
-		assertTrue(emisora1.obtenerListaReproduccion().get(1).equals(lista.get(1)));
-		
-		assertTrue(cancion3.equals(emisora2.obtenerListaReproduccion().get(0)));*/
-		
 	}
 	
 	@Test
@@ -101,12 +87,9 @@ public class EmisoraTest {
 			
 			assertEquals(emisora1.obtenerDuracion(),anyDuracion);
 		}
-		
-		/*assertEquals(emisora1.obtenerDuracion(),9);
-		assertEquals(emisora2.obtenerDuracion(),6);
-		assertNotEquals(emisora1.obtenerDuracion(),0);
-		assertNotEquals(emisora2.obtenerDuracion(),0);*/
 	}
+		
+
 	
 	@Test
 	public void obtenerListaReproduccionTest() {
@@ -122,6 +105,7 @@ public class EmisoraTest {
 			assertEquals(anyCancion,emisora3.obtenerListaReproduccion().get(0));
 			
 		}
+
 	}
 	
 	@Test
@@ -138,8 +122,6 @@ public class EmisoraTest {
 			assertEquals(anyCancion,emisora3.buscar(anyCancion.obtenerTitulo()).get(0));
 			
 		}
-
-		
 	}
 	
 	

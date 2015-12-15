@@ -1,8 +1,10 @@
 package es.udc.vvs.test.servidor;
 
+import static es.udc.vvs.model.util.servidorutil.ModelConstants.MASTER_TOKEN;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+
 
 import java.util.List;
 
@@ -15,7 +17,6 @@ import es.udc.vvs.model.contenido.cancionimpl.ImplementacionCancion;
 import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
 import es.udc.vvs.model.servidor.servidorimpl.ImplementacionServidor;
 import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
-import static es.udc.vvs.model.util.servidorutil.ModelConstants.*;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -48,6 +49,39 @@ public class ServidorTest {
 		assertEquals(esperado,servidor.obtenerNombre());
 	}
 	
+
+	/**
+	 * Test alta usuario.
+	 */
+	@Test
+	public void altaUsuario(){
+		assertTrue(servidor.alta() != null);	
+	}
+	
+
+	/**
+	 * Test baja usuario.
+	 */
+	@Test
+	public void bajaUsuario() throws TokenInvalidoException{
+		String tk = servidor.alta();
+
+			servidor.baja(tk);
+			assertFalse(servidor.existeUsuario(tk));
+
+	}
+	
+	/**
+	 * Test baja usuario no existente.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void bajaUsuarioNoExiste() throws TokenInvalidoException {
+		String tk ="notexist";
+		servidor.baja(tk);
+	}
+	
 	/**
 	 * Test agregar Contenido.
 	 */
@@ -69,16 +103,26 @@ public class ServidorTest {
 	
 	
 	/**
-	 * Test agregar Contenido con token inválido.
+	 * Test agregar Contenido con token mulo.
 	 *
 	 * @throws TokenInvalidoException the token invalido exception
 	 */
 	@Test(expected = TokenInvalidoException.class)
 	public void agregarTokenInvalidoTest() throws TokenInvalidoException 
 	{
-
 		servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), token);
+	}
 	
+	
+	/**
+	 * Test agregar Contenido con token nulo.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void agregarTokenNuloTest() throws TokenInvalidoException 
+	{
+		servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), null);
 	}
 	
 	
@@ -120,7 +164,6 @@ public class ServidorTest {
 	@Test(expected = TokenInvalidoException.class)
 	public void eliminarTokenInvalidoTest() throws TokenInvalidoException {
 		boolean agregado = true;
-		boolean eliminado = true;
 		
 		Contenido contenido = new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5);
 		
@@ -136,6 +179,33 @@ public class ServidorTest {
 		assertEquals(1,resultado.size());
 		
 		servidor.eliminar(contenido, token);
+		
+	}
+	
+	
+	/**
+	 * Test eliminar Contenido con token inválido.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void eliminarTokenNuloTest() throws TokenInvalidoException {
+		boolean agregado = true;
+		
+		Contenido contenido = new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5);
+		
+		try {
+			servidor.agregar(contenido, MASTER_TOKEN);
+		} catch (TokenInvalidoException e) {
+			agregado = false;
+		}
+		
+		assertTrue(agregado);
+		
+		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
+		assertEquals(1,resultado.size());
+		
+		servidor.eliminar(contenido, null);
 		
 	}
 	

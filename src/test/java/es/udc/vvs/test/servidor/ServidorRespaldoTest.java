@@ -1,6 +1,7 @@
 package es.udc.vvs.test.servidor;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -86,6 +87,38 @@ public class ServidorRespaldoTest {
 	}
 	
 	/**
+	 * Test alta usuario.
+	 */
+	@Test
+	public void altaUsuario(){
+		assertTrue(servidor.alta() != null);	
+	}
+	
+
+	/**
+	 * Test baja usuario.
+	 */
+	@Test
+	public void bajaUsuario() throws TokenInvalidoException{
+		String tk = servidor.alta();
+
+			servidor.baja(tk);
+			assertFalse(servidor.existeUsuario(tk));
+
+	}
+	
+	/**
+	 * Test baja usuario no existente.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void bajaUsuarioNoExiste() throws TokenInvalidoException {
+		String tk ="notexist";
+		servidor.baja(tk);
+	}
+	
+	/**
 	 * Test agregar Contenido.
 	 */
 	@Test
@@ -114,6 +147,18 @@ public class ServidorRespaldoTest {
 	public void agregarTokenInvalidoTest() throws TokenInvalidoException 
 	{
 		servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), token);
+	}
+
+	
+	/**
+	 * Test agregar Contenido con token nulo.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void agregarTokenNuloTest() throws TokenInvalidoException 
+	{
+		servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), null);
 	}
 	
 	
@@ -172,6 +217,33 @@ public class ServidorRespaldoTest {
 		assertEquals(1,resultado.size());
 
 		servidor.eliminar(contenido, token);
+	}
+	
+	
+	/**
+	 * Test eliminar Contenido con token inválido.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void eliminarTokenNuloTest() throws TokenInvalidoException {
+		boolean agregado = true;
+		
+		Contenido contenido = new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5);
+		
+		try {
+			servidor.agregar(contenido, MASTER_TOKEN);
+		} catch (TokenInvalidoException e) {
+			agregado = false;
+		}
+		
+		assertTrue(agregado);
+		
+		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
+		assertEquals(1,resultado.size());
+		
+		servidor.eliminar(contenido, null);
+		
 	}
 	
 	
