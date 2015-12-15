@@ -51,16 +51,17 @@ public class ImplementacionEmisora implements Contenido{
 
 	public void agregar(Contenido contenido, Contenido predecesor) {
 		
+		if (predecesor == null) {
+			
+			listaReproduccion.add(contenido);			
+			
+		}
+		
 		if (predecesor != null) {
 			
 			int pos = listaReproduccion.indexOf(predecesor);
 			
-			listaReproduccion.add(pos+1, contenido);		
-			
-			
-		}else{
-			
-			listaReproduccion.add(contenido);
+			listaReproduccion.add(pos+1, contenido);
 		}
 		
 		duracion = duracion + contenido.obtenerDuracion();
