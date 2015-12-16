@@ -31,68 +31,143 @@ public class TestMockito {
 	/** El servidor de respaldo. */
 	private Servidor servidorRespaldo;
 	
-	/** Anuncio. */
+	private String token;
+	private String tokenR;
+	
+	
+	//DECLARACION DE MOCKS PARA LAS PRUEBAS
+	/** Anuncio 1. */
 	private Contenido anuncio = mock(ImplementacionAnuncio.class);
+	
+	/** Anuncio 2. */
+	private Contenido anuncio2 = mock(ImplementacionAnuncio.class);
+	
+	/** Anuncio 3. */
+	private Contenido anuncio3 = mock(ImplementacionAnuncio.class);
 	
 	/** Cancion. */
 	private Contenido cancion = mock(ImplementacionCancion.class);
 	
+	/** Cancion 2. */
+	private Contenido cancion2 = mock(ImplementacionCancion.class);
+	
+	/** Cancion 3. */
+	private Contenido cancion3 = mock(ImplementacionCancion.class);
+	
+	/** Cancion 4. */
+	private Contenido cancion4 = mock(ImplementacionCancion.class);
+	
 	/** Emisora. */
 	private Contenido emisora = mock(ImplementacionEmisora.class);
 
-	
-	/** Emisora. */
-	private Contenido contenido = new ImplementacionCancion("cancion",5);
+
 	
 	/**
-	 * Metodo de inicializacion de los stubs
+	 * Metodo para declaracion de stubs e inicializacion de servidores
 	 */
 	@Before
 	public void init() {
-
-		//STUBS PARA SERVICIO
-		//stubs para obtención del nombre de servicio
-		/*when(servidor.obtenerNombre()).thenReturn("ServidorPrueba");
-		when(servidorRespaldo.obtenerNombre()).thenReturn("ServidorPruebaRespaldo");
-		
-		//stubs para alta en el servicio
-		when(servidor.alta()).thenReturn("anyString");
-		when(servidorRespaldo.alta()).thenReturn("anyString");
-		
-		try {
-			//stubs para baja en el servicio
-			doThrow(new TokenInvalidoException()).when(servidor).baja(null);
-			doThrow(new TokenInvalidoException()).when(servidorRespaldo).baja(null);
-			
-			//stubs para agregar Contenido en el servicio
-			doThrow(new TokenInvalidoException()).when(servidor).agregar(contenido, MASTER_TOKEN);
-			doThrow(new TokenInvalidoException()).when(servidorRespaldo).agregar(contenido, MASTER_TOKEN);
-			
-			//stubs para eliminar Contenido en el servicio
-			doThrow(new TokenInvalidoException()).when(servidor).eliminar(contenido, MASTER_TOKEN);
-			doThrow(new TokenInvalidoException()).when(servidorRespaldo).eliminar(contenido, MASTER_TOKEN);
-		} catch (TokenInvalidoException e) {
-			e.printStackTrace();
-		}
-		
-		//stubs para buscar Contenidos en el servicio
-		when(servidor.buscar("Cancion", "")).thenReturn(new ArrayList<Contenido>());
-		when(servidorRespaldo.buscar("Cancion", "")).thenReturn(new ArrayList<Contenido>());
-		*/
-		
 		servidor = new ImplementacionServidor("servidorPrueba");
-		servidorRespaldo = new ImplementacionServidorRespaldo(servidor,"servidorRespaldoPrueba");
 		
-		//STUBS PARA CLASES DE CONTENIDO
+		token = servidor.alta();
+		
+		// AGREGAMOS CONTENIDOS AL SERVIDOR
+		boolean agregado = true;
+		try {
+			servidor.agregar(anuncio, MASTER_TOKEN);
+			servidor.agregar(cancion, MASTER_TOKEN);
+			servidor.agregar(emisora, MASTER_TOKEN);
+		} catch (TokenInvalidoException e) {
+			agregado = false;
+		}
+		assertTrue(agregado);
+		
+		servidorRespaldo = new ImplementacionServidorRespaldo(servidor,"servidorRespaldoPrueba");
+		tokenR = servidorRespaldo.alta();
+		
+		//STUBS PARA LA FUNCION obtenerTitulo()
 		when(anuncio.obtenerTitulo()).thenReturn("PUBLICIDAD anuncio");
+		when(anuncio2.obtenerTitulo()).thenReturn("PUBLICIDAD anuncio2");
+		when(anuncio3.obtenerTitulo()).thenReturn("PUBLICIDAD anuncio3");
+		
 		when(cancion.obtenerTitulo()).thenReturn("cancion");
+		when(cancion2.obtenerTitulo()).thenReturn("cancion2");
+		when(cancion3.obtenerTitulo()).thenReturn("cancion3");
+		when(cancion4.obtenerTitulo()).thenReturn("cancion4");
+		
 		when(emisora.obtenerTitulo()).thenReturn("emisora");
 		
+		//STUBS PARA LA FUNCION obtenerDuracion()
+		when(anuncio.obtenerDuracion()).thenReturn(1);
+		when(anuncio2.obtenerDuracion()).thenReturn(2);
+		when(anuncio3.obtenerDuracion()).thenReturn(3);
+				
+		when(cancion.obtenerDuracion()).thenReturn(5);
+		when(cancion2.obtenerDuracion()).thenReturn(6);
+		when(cancion3.obtenerDuracion()).thenReturn(7);
+		when(cancion4.obtenerDuracion()).thenReturn(8);
+				
+		when(emisora.obtenerDuracion()).thenReturn(20);
+		
+		//STUB PARA LA FUNCION buscar(subcadena)
 		List<Contenido> anuncios = new ArrayList<Contenido>();
 		anuncios.add(anuncio);
+		when(anuncio.buscar("PUBLICIDAD")).thenReturn(anuncios);
 		
-		when(emisora.buscar("PUBLICIDAD")).thenReturn(anuncios);
+		List<Contenido> anuncios2 = new ArrayList<Contenido>();
+		anuncios2.add(anuncio2);
+		when(anuncio2.buscar("PUBLICIDAD")).thenReturn(anuncios2);
+		
+		List<Contenido> anuncios3 = new ArrayList<Contenido>();
+		anuncios3.add(anuncio3);
+		when(anuncio3.buscar("PUBLICIDAD")).thenReturn(anuncios3);
+		
+		List<Contenido> anunciosE = new ArrayList<Contenido>();
+		anunciosE.add(anuncio2);
+		anunciosE.add(anuncio3);
+		when(emisora.buscar("PUBLICIDAD")).thenReturn(anunciosE);
 	}
+	
+	
+	/**
+	 * Test para probar los mocks.
+	 */
+	@Test
+	public void testMocks()
+	{
+		assertEquals(anuncio.obtenerTitulo(),"PUBLICIDAD anuncio");
+		assertEquals(anuncio2.obtenerTitulo(),"PUBLICIDAD anuncio2");
+		assertEquals(anuncio3.obtenerTitulo(),"PUBLICIDAD anuncio3");
+		
+		assertEquals(cancion.obtenerTitulo(),"cancion");
+		assertEquals(cancion2.obtenerTitulo(),"cancion2");
+		assertEquals(cancion3.obtenerTitulo(),"cancion3");
+		assertEquals(cancion4.obtenerTitulo(),"cancion4");
+		
+		assertEquals(emisora.obtenerTitulo(),"emisora");
+		
+		assertEquals(anuncio.obtenerDuracion(),1);
+		assertEquals(anuncio2.obtenerDuracion(),2);
+		assertEquals(anuncio3.obtenerDuracion(),3);
+		
+		assertEquals(cancion.obtenerDuracion(),5);
+		assertEquals(cancion2.obtenerDuracion(),6);
+		assertEquals(cancion3.obtenerDuracion(),7);
+		assertEquals(cancion4.obtenerDuracion(),8);
+		
+		assertEquals(emisora.obtenerDuracion(),20);
+		
+		assertEquals(anuncio.buscar("PUBLICIDAD").size(),1);
+		assertEquals(anuncio.obtenerTitulo(),anuncio.buscar("PUBLICIDAD").get(0).obtenerTitulo());
+		assertEquals(anuncio2.buscar("PUBLICIDAD").size(),1);
+		assertEquals(anuncio2.obtenerTitulo(),anuncio2.buscar("PUBLICIDAD").get(0).obtenerTitulo());
+		assertEquals(anuncio3.buscar("PUBLICIDAD").size(),1);
+		assertEquals(anuncio3.obtenerTitulo(),anuncio3.buscar("PUBLICIDAD").get(0).obtenerTitulo());
+		assertEquals(emisora.buscar("PUBLICIDAD").size(),2);
+		assertEquals(anuncio2.obtenerTitulo(),emisora.buscar("PUBLICIDAD").get(0).obtenerTitulo());
+		assertEquals(anuncio3.obtenerTitulo(),emisora.buscar("PUBLICIDAD").get(1).obtenerTitulo());
+	}
+	
 	
 	/**
 	 * Test para obtener nombre servidores.
@@ -121,134 +196,434 @@ public class TestMockito {
 	}
 	
 	/**
-	 * Test para dar de baja en los servidores en el caso.
-	 *
-	 * @throws TokenInvalidoException the token invalido exception
+	 * Test baja usuario.
 	 */
 	@Test
-	public void testBajaServidor()
+	public void bajaUsuario()
 	{
-		String token = servidor.alta();
-		token = servidorRespaldo.alta();
-		
+		boolean baja = true;
+		String tk = servidor.alta();
 		try {
-			servidor.baja(token);
-			servidorRespaldo.baja(token);
-			verify(servidor, times(1)).baja(token);
-			verify(servidorRespaldo, times(1)).baja(token);
+			servidor.baja(tk);
 		} catch (TokenInvalidoException e) {
-			e.printStackTrace();
+			baja = false;
 		}
+		assertTrue(baja);
+		try {
+			servidor.baja(tk);
+		} catch (TokenInvalidoException e) {
+			baja = false;
+		}
+		assertFalse(baja);
 		
-		verify(servidor, times(1)).alta();
-		verify(servidorRespaldo, times(1)).alta();
+		baja = true;
+		tk = servidorRespaldo.alta();
+		try {
+			servidorRespaldo.baja(tk);
+		} catch (TokenInvalidoException e) {
+			baja = false;
+		}
+		assertTrue(baja);
+		try {
+			servidorRespaldo.baja(tk);
+		} catch (TokenInvalidoException e) {
+			baja = false;
+		}
+		assertFalse(baja);
 	}
 	
 	/**
-	 * Test para dar de baja en los servidores en el caso
-	 * de que el token sea inválido.
+	 * Test baja usuario no existente.
 	 *
 	 * @throws TokenInvalidoException the token invalido exception
 	 */
 	@Test(expected = TokenInvalidoException.class)
-	public void testBajaTokenNuloServidor() throws TokenInvalidoException
+	public void bajaUsuarioNoExiste() throws TokenInvalidoException 
 	{
-		servidor.baja(null);
-		verify(servidor, times(1)).baja(null);
-
-		servidor.baja(null);
-		verify(servidor, times(2)).baja(null);
-		
-		servidorRespaldo.baja(null);
-		verify(servidor, times(1)).baja(null);
+		String tk ="notexist";
+		servidor.baja(tk);
 	}
 	
 	/**
-	 * Test para agregar un Contenido a los servidores.
-	 */
-	@Test
-	public void testAgregarServidor()
-	{
-		contenido = new ImplementacionCancion("CancionPrueba",5);
-		
-		try {
-			servidor.agregar(contenido, MASTER_TOKEN);
-			servidor.agregar(contenido, MASTER_TOKEN);
-			servidorRespaldo.agregar(contenido, MASTER_TOKEN);
-		} catch (TokenInvalidoException e) {
-			e.printStackTrace();
-		}
-		try {
-			verify(servidor, times(2)).agregar(contenido, MASTER_TOKEN);
-			verify(servidorRespaldo, times(1)).agregar(contenido, MASTER_TOKEN);
-		} catch (TokenInvalidoException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * Test eliminar un Contenido en los servidores.
+	 * Test baja usuario no existente en servidor de respaldo.
 	 *
 	 * @throws TokenInvalidoException the token invalido exception
 	 */
-	@Test
-	public void testEliminarServidor() throws TokenInvalidoException
+	@Test(expected = TokenInvalidoException.class)
+	public void bajaUsuarioNoExisteRespaldo() throws TokenInvalidoException 
 	{
-		contenido = new ImplementacionCancion("CancionPrueba",5);
-		
-		try {
-			servidor.agregar(contenido, MASTER_TOKEN);
-			servidorRespaldo.agregar(contenido, MASTER_TOKEN);
-			servidor.eliminar(contenido, MASTER_TOKEN);
-			servidorRespaldo.eliminar(contenido, MASTER_TOKEN);
-		} catch (TokenInvalidoException e) {
-			e.printStackTrace();
-		}
-		
-		verify(servidor, times(1)).agregar(contenido, MASTER_TOKEN);
-		verify(servidorRespaldo, times(1)).agregar(contenido, MASTER_TOKEN);
-		
-		verify(servidor, times(1)).eliminar(contenido, MASTER_TOKEN);
-		verify(servidorRespaldo, times(1)).eliminar(contenido, MASTER_TOKEN);	
+		String tk ="notexist";
+		servidorRespaldo.baja(tk);
 	}
 	
 	/**
-	 * Test para buscar Contenidos en los servidores.
+	 * Test agregar Contenido.
 	 */
 	@Test
-	public void testBuscarServidor()
-	{
-		String tk = servidor.alta();
-		String tkR = servidorRespaldo.alta();
-		contenido = new ImplementacionCancion("CancionPrueba",5);
-		
+	public void agregarTest() {
+		boolean agregado = true;
 		try {
-			servidor.agregar(contenido, MASTER_TOKEN);
-			servidorRespaldo.agregar(contenido, MASTER_TOKEN);
+			servidor.agregar(anuncio2, MASTER_TOKEN);
 		} catch (TokenInvalidoException e) {
-			e.printStackTrace();
+			agregado = false;
 		}
+		assertTrue(agregado);
+		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
+		//Verificamos que anuncio2.obtenerTitulo() se ha invocado 1 vez en servidor.buscar()
+		verify(anuncio2,times(1)).obtenerTitulo();
 		
-		servidor.buscar("Cancion", tk);
-		verify(servidor, times(1)).buscar("Cancion", tk);
-		
-		servidor.buscar("Cancion", tk);
-		servidor.buscar("Cancion", tk);
-		verify(servidor, times(3)).buscar("Cancion", tk);
-		
-		//************ Servidor Respaldo ****************************
-		servidorRespaldo.buscar("Cancion", tkR);
-		servidorRespaldo.buscar("Cancion", tkR);
-		verify(servidorRespaldo, times(2)).buscar("Cancion", tkR);
-		
-		servidorRespaldo.buscar("Cancion", tkR);
-		verify(servidorRespaldo, times(3)).buscar("Cancion", tkR);
-		
-		servidorRespaldo.buscar("Cancion", tkR);
-		verify(servidorRespaldo, times(4)).buscar("Cancion", tkR);
-		
-		servidorRespaldo.buscar("Cancion", tkR);
-		verify(servidorRespaldo, times(5)).buscar("Cancion", tkR);
+		assertEquals(2,resultado.size());
+		assertEquals(anuncio.obtenerTitulo(),resultado.get(0).obtenerTitulo());
+		assertEquals(anuncio2.obtenerTitulo(),resultado.get(1).obtenerTitulo());
+		//Verificamos que anuncio.obtenerTitulo() se ha invocado 2 veces mas
+		verify(anuncio,times(3)).obtenerTitulo();
+		//Verificamos que anuncio.obtenerTitulo() se ha invocado 2 veces mas
+		verify(anuncio2,times(3)).obtenerTitulo();
 	}
+	
+	/**
+	 * Test agregar Contenido en servidor con respaldo.
+	 */
+	@Test
+	public void agregarRespaldoTest() {
+		boolean agregado = true;
+		try {
+			servidorRespaldo.agregar(anuncio, MASTER_TOKEN);
+		} catch (TokenInvalidoException e) {
+			agregado = false;
+		}
+		assertTrue(agregado);
+		List<Contenido> resultado = servidorRespaldo.buscar("PUBLICIDAD", tokenR);
+		//Verificamos que anuncio.obtenerTitulo() se ha invocado 1 vez en servidor.buscar()
+		verify(anuncio,times(1)).obtenerTitulo();
+		
+		assertEquals(1,resultado.size());
+		assertEquals(anuncio.obtenerTitulo(),resultado.get(0).obtenerTitulo());
+		//Verificamos que anuncio.obtenerTitulo() se ha invocado 2 veces mas
+		verify(anuncio,times(3)).obtenerTitulo();
+	}
+	
+	/**
+	 * Test agregar Contenido con token invalido.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void agregarTokenInvalidoTest() throws TokenInvalidoException 
+	{
+		servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), token);
+	}
+	
+	/**
+	 * Test agregar Contenido con token invalido en servidor de respaldo.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void agregarTokenInvalidoRespaldoTest() throws TokenInvalidoException 
+	{
+		servidorRespaldo.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), token);
+	}
+	
+	/**
+	 * Test agregar Contenido con token nulo.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void agregarTokenNuloTest() throws TokenInvalidoException 
+	{
+		servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), null);
+	}
+	
+	/**
+	 * Test agregar Contenido con token nulo en servidor de respaldo.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void agregarTokenNuloRespaldoTest() throws TokenInvalidoException 
+	{
+		servidorRespaldo.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), null);
+	}
+	
+	/**
+	 * Test eliminar Contenido.
+	 */
+	@Test
+	public void eliminarTest() {
+		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
+		assertEquals(1,resultado.size());
+		
+		boolean borrado = true;
+		try {
+			servidor.eliminar(anuncio, MASTER_TOKEN);
+		} catch (TokenInvalidoException e) {
+			borrado = false;
+		}
+		assertTrue(borrado);
+		
+		resultado = servidor.buscar("PUBLICIDAD", token);
+		assertEquals(0,resultado.size());
+	}
+	
+	/**
+	 * Test eliminar Contenido del servidor de respaldo.
+	 */
+	@Test
+	public void eliminarRespaldoTest() {
+		boolean agregado = true;
+		try {
+			servidorRespaldo.agregar(anuncio2, MASTER_TOKEN);
+		} catch (TokenInvalidoException e) {
+			agregado = false;
+		}
+		assertTrue(agregado);
+		List<Contenido> resultado = servidorRespaldo.buscar("PUBLICIDAD", tokenR);
+		assertEquals(1,resultado.size());
+		
+		boolean borrado = true;
+		try {
+			servidorRespaldo.eliminar(anuncio2, MASTER_TOKEN);
+		} catch (TokenInvalidoException e) {
+			borrado = false;
+		}
+		assertTrue(borrado);
+		
+		// Nos devuelve un anuncio del servidor de respaldo
+		resultado = servidor.buscar("PUBLICIDAD", token);
+		assertEquals(1,resultado.size());
+		assertEquals(anuncio.obtenerTitulo(),resultado.get(0).obtenerTitulo());
+	}
+	
+	/**
+	 * Test eliminar Contenido con token inválido.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void eliminarTokenInvalidoTest() throws TokenInvalidoException {
+		
+		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
+		assertEquals(1,resultado.size());
+		
+		servidor.eliminar(anuncio, token);
+		
+	}
+	
+	/**
+	 * Test eliminar Contenido con token inválido en servidor de respaldo.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void eliminarTokenInvalidoRespaldoTest() throws TokenInvalidoException {
+		servidorRespaldo.eliminar(anuncio, token);
+	}
+	
+	/**
+	 * Test eliminar Contenido con token nulo.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void eliminarTokenNuloTest() throws TokenInvalidoException {
+		
+		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
+		assertEquals(1,resultado.size());
+		
+		servidor.eliminar(anuncio, null);
+	}
+	
+	/**
+	 * Test eliminar Contenido con token nulo en servidor de respaldo.
+	 *
+	 * @throws TokenInvalidoException the token invalido exception
+	 */
+	@Test(expected = TokenInvalidoException.class)
+	public void eliminarTokenNuloRespaldoTest() throws TokenInvalidoException {
+		servidorRespaldo.eliminar(anuncio, null);
+	}
+	
+	/**
+	 * Test para buscar contenidos.
+	 */
+	@Test
+	public void buscarTest() {
+		
+		// PRIMERA BUSQUEDA TOKEN HABILITADO
+		List<Contenido> resultado = servidor.buscar("PUBLI", token);
+		assertEquals(1,resultado.size());
+		
+		assertEquals(anuncio.obtenerTitulo(),resultado.get(0).obtenerTitulo());
+		assertEquals(anuncio.obtenerDuracion(),resultado.get(0).obtenerDuracion());
+		//Verificamos el numero de veces que anuncio ha invocado obtenerTitulo()
+		// 1 vez en buscar y 2 en el equals
+		verify(anuncio,times(3)).obtenerTitulo();
+		//Verificamos el numero de veces que se ha invocado obtenerDuracion()
+		// 2 veces en el equals
+		verify(anuncio,times(2)).obtenerDuracion();
+		
+		//Verificamos el numero de veces que anuncio ha invocado obtenerTitulo()
+		// 1 vez en buscar
+		verify(cancion,times(1)).obtenerTitulo();
+		//Verificamos el numero de veces que anuncio ha invocado obtenerTitulo()
+		// 1 vez en buscar
+		verify(emisora,times(1)).obtenerTitulo();
+		
+		
+		// SEGUNDA BUSQUEDA TOKEN HABILITADO
+		resultado = servidor.buscar("canc", token);
+		assertEquals(1,resultado.size());
+		
+		assertEquals(cancion.obtenerTitulo(),resultado.get(0).obtenerTitulo());
+		assertEquals(cancion.obtenerDuracion(),resultado.get(0).obtenerDuracion());
+		//Verificamos el numero de veces que cancion ha invocado obtenerTitulo()
+		// 1 vez en buscar y 2 en el equals y 1 a mayores de la anterior
+		verify(cancion,times(4)).obtenerTitulo();
+		//Verificamos el numero de veces que cancion ha invocado obtenerDuracion()
+		// 2 veces en el equals
+		verify(cancion,times(2)).obtenerDuracion();
+		
+		//Verificamos el numero de veces que anuncio ha invocado obtenerTitulo()
+		// 1 vez en buscar y 3 de la anterior
+		verify(anuncio,times(4)).obtenerTitulo();
+		//Verificamos el numero de veces que anuncio ha invocado obtenerTitulo()
+		// 1 vez en buscar y 1 a mayores de la anterior
+		verify(emisora,times(2)).obtenerTitulo();
+	
+		
+		// AGREGAMOS MAS CONTENIDOS AL SERVIDOR
+		boolean agregado = true;
+		try {
+			servidor.agregar(cancion2, MASTER_TOKEN);
+			servidor.agregar(cancion3, MASTER_TOKEN);
+			servidor.agregar(cancion4, MASTER_TOKEN);
+		} catch (TokenInvalidoException e) {
+			agregado = false;
+		}
+		assertTrue(agregado);
+		
+		for(int i=0;i<8;i++){
+			resultado = servidor.buscar("cancion", token);
+			assertEquals(4,resultado.size());
+		}
+			
+		// TERCERA BUSQUEDA TOKEN DESHABILITADO
+		resultado = servidor.buscar("canc", token);
+		assertEquals(6,resultado.size());
+		
+		assertEquals(anuncio3.obtenerTitulo(),resultado.get(0).obtenerTitulo());
+		assertEquals(anuncio3.obtenerDuracion(),resultado.get(0).obtenerDuracion());
+		
+		assertEquals(cancion.obtenerTitulo(),resultado.get(1).obtenerTitulo());
+		assertEquals(cancion.obtenerDuracion(),resultado.get(1).obtenerDuracion());
+		
+		assertEquals(cancion2.obtenerTitulo(),resultado.get(2).obtenerTitulo());
+		assertEquals(cancion2.obtenerDuracion(),resultado.get(2).obtenerDuracion());
+		
+		assertEquals(cancion3.obtenerTitulo(),resultado.get(3).obtenerTitulo());
+		assertEquals(cancion3.obtenerDuracion(),resultado.get(3).obtenerDuracion());
+		
+		assertEquals(anuncio2.obtenerTitulo(),resultado.get(4).obtenerTitulo());
+		assertEquals(anuncio2.obtenerDuracion(),resultado.get(4).obtenerDuracion());
+		
+		assertEquals(cancion4.obtenerTitulo(),resultado.get(5).obtenerTitulo());
+		assertEquals(cancion4.obtenerDuracion(),resultado.get(5).obtenerDuracion());
+		
+		//Verificamos el numero de veces que se invocaron los metodos de obtenerTitulo()
+		// y obtenerDuracion()
+		verify(anuncio3,times(2)).obtenerTitulo();
+		verify(anuncio3,times(2)).obtenerDuracion();
+		
+		verify(cancion,times(15)).obtenerTitulo();
+		verify(cancion,times(4)).obtenerDuracion();
+		
+		verify(cancion2,times(11)).obtenerTitulo();
+		verify(cancion2,times(2)).obtenerDuracion();
+		
+		verify(cancion3,times(11)).obtenerTitulo();
+		verify(cancion3,times(2)).obtenerDuracion();
+		
+		verify(anuncio2,times(2)).obtenerTitulo();
+		verify(anuncio2,times(2)).obtenerDuracion();
+		
+		verify(cancion,times(15)).obtenerTitulo();
+		verify(cancion,times(4)).obtenerDuracion();
+	}
+	
+	/**
+	 * Test para buscar contenidos en servidor de respaldo.
+	 */
+	@Test
+	public void buscarRespaldoTest() {
+		
+		//Primero probamos que el servidor de respaldo
+		// funciona ya con el caso de que no tenga ningun elemento,
+		// al tampoco estar registrado en el de respaldo nos incluye un anuncio
+		
+		// PRIMERA BUSQUEDA TOKEN HABILITADO
+		List<Contenido> resultado = servidorRespaldo.buscar("canc", tokenR);
+		assertEquals(2,resultado.size());
+				
+		assertEquals(anuncio3.obtenerTitulo(),resultado.get(0).obtenerTitulo());
+		assertEquals(anuncio3.obtenerDuracion(),resultado.get(0).obtenerDuracion());
+		
+		assertEquals(cancion.obtenerTitulo(),resultado.get(1).obtenerTitulo());
+		assertEquals(cancion.obtenerDuracion(),resultado.get(1).obtenerDuracion());
+	
+		
+		// AGREGAMOS CONTENIDOS AL SERVIDOR
+		boolean agregado = true;
+		try {
+			servidorRespaldo.agregar(cancion2, MASTER_TOKEN);
+			servidorRespaldo.agregar(cancion3, MASTER_TOKEN);
+			servidorRespaldo.agregar(cancion4, MASTER_TOKEN);
+			servidorRespaldo.agregar(emisora, MASTER_TOKEN);
+		} catch (TokenInvalidoException e) {
+			agregado = false;
+		}
+		assertTrue(agregado);
+		
+		
+		// SEGUNDA BUSQUEDA TOKEN HABILITADO
+		resultado = servidorRespaldo.buscar("canc", tokenR);
+		assertEquals(3,resultado.size());
+						
+		assertEquals(cancion2.obtenerTitulo(),resultado.get(0).obtenerTitulo());
+		assertEquals(cancion2.obtenerDuracion(),resultado.get(0).obtenerDuracion());
+				
+		assertEquals(cancion3.obtenerTitulo(),resultado.get(1).obtenerTitulo());
+		assertEquals(cancion3.obtenerDuracion(),resultado.get(1).obtenerDuracion());
+		
+		assertEquals(cancion4.obtenerTitulo(),resultado.get(2).obtenerTitulo());
+		assertEquals(cancion4.obtenerDuracion(),resultado.get(2).obtenerDuracion());
+		
+		
+		for(int i=0;i<8;i++){
+			resultado = servidorRespaldo.buscar("cancion", tokenR);
+			assertEquals(3,resultado.size());
+		}
+			
+		// TERCERA BUSQUEDA TOKEN DESHABILITADO
+		resultado = servidorRespaldo.buscar("canc", token);
+		assertEquals(5,resultado.size());
+		
+		assertEquals(anuncio3.obtenerTitulo(),resultado.get(0).obtenerTitulo());
+		assertEquals(anuncio3.obtenerDuracion(),resultado.get(0).obtenerDuracion());
+		
+		assertEquals(cancion2.obtenerTitulo(),resultado.get(1).obtenerTitulo());
+		assertEquals(cancion2.obtenerDuracion(),resultado.get(1).obtenerDuracion());
+		
+		assertEquals(cancion3.obtenerTitulo(),resultado.get(2).obtenerTitulo());
+		assertEquals(cancion3.obtenerDuracion(),resultado.get(2).obtenerDuracion());
+		
+		assertEquals(cancion4.obtenerTitulo(),resultado.get(3).obtenerTitulo());
+		assertEquals(cancion4.obtenerDuracion(),resultado.get(3).obtenerDuracion());
+		
+		assertEquals(anuncio2.obtenerTitulo(),resultado.get(4).obtenerTitulo());
+		assertEquals(anuncio2.obtenerDuracion(),resultado.get(4).obtenerDuracion());
+	}
+		
 
 }
