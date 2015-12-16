@@ -94,11 +94,9 @@ public class ImplementacionServidor implements Servidor{
 				List<Contenido> anuncios = new ArrayList<Contenido>();
 				for(Contenido cont : this.contenido)
 				{
-					if(cont.obtenerTitulo().contains("PUBLICIDAD"))
-						anuncios.add(cont);
-					
-					if(cont.getClass() == ImplementacionEmisora.class)
-						anuncios.addAll(cont.buscar("PUBLICIDAD"));
+					List<Contenido> ans = cont.buscar("PUBLICIDAD");
+					if(ans != null)
+						anuncios.addAll(ans);
 				}
 				int j=0;
 				int numAnuncios = anuncios.size()-1;
