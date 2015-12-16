@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.udc.vvs.model.contenido.Contenido;
-import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
 import es.udc.vvs.model.servidor.Servidor;
 import es.udc.vvs.model.servidor.Usuario;
 import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
