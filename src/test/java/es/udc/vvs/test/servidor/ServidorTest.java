@@ -8,7 +8,10 @@ import static org.junit.Assert.assertFalse;
 
 import java.util.List;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import es.udc.vvs.model.contenido.Contenido;
@@ -17,6 +20,10 @@ import es.udc.vvs.model.contenido.cancionimpl.ImplementacionCancion;
 import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
 import es.udc.vvs.model.servidor.servidorimpl.ImplementacionServidor;
 import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
+import etm.core.configuration.BasicEtmConfigurator;
+import etm.core.configuration.EtmManager;
+import etm.core.monitor.EtmMonitor;
+import etm.core.renderer.SimpleTextRenderer;
 import net.java.quickcheck.Generator;
 import net.java.quickcheck.generator.PrimitiveGenerators;
 import net.java.quickcheck.generator.iterable.Iterables;
@@ -27,11 +34,21 @@ import net.java.quickcheck.generator.iterable.Iterables;
  */
 public class ServidorTest {
 	
+	private static EtmMonitor monitor;
+	
 	/** The servidor. */
 	private ImplementacionServidor servidor;
 	
 	/** The token. */
 	private String token;
+	
+	
+	@BeforeClass
+	public static void setUpMonitor() {
+		BasicEtmConfigurator.configure();
+	    monitor = EtmManager.getEtmMonitor();
+	    monitor.start();
+	}
 	
 	/**
 	 * Sets the up.
@@ -40,7 +57,14 @@ public class ServidorTest {
 	public void setUp() {
 		servidor = new ImplementacionServidor("servidor");
 		token = servidor.alta();
+		
 	}
+	
+	 @AfterClass
+	 public static void tearDown() {
+		 monitor.render(new SimpleTextRenderer());
+	 }
+	 
 	
 	/**
 	 * Test para obtener nombre de servidor.
