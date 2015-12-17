@@ -28,7 +28,7 @@
 	<classpathentry kind="lib" path="lib/quickcheck-src-generator-0.6-sources.jar"/>
 	<classpathentry kind="lib" path="lib/quickcheck-src-generator-0.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Alex-fic/Documents/vvs-practicatesting/lib/FindBugs.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alex-fic/Documents/vvs-practicatesting/lib/jetm-1.2.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alex-fic/Documents/vvs-practicatesting/lib/jetm-optional-1.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/jetm-1.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/jetm-optional-1.2.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
