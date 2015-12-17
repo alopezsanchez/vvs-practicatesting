@@ -2,6 +2,7 @@ package es.udc.vvs.test.emisora;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -13,27 +14,26 @@ import org.junit.Test;
 import es.udc.vvs.model.contenido.Contenido;
 import es.udc.vvs.model.contenido.cancionimpl.ImplementacionCancion;
 import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
-/**
-* 
-*
-* @author Grupo 8
-*/
-public class EmisoraTest {	
+import net.java.quickcheck.Generator;
+import net.java.quickcheck.generator.PrimitiveGenerators;
+import net.java.quickcheck.generator.iterable.Iterables;
+
+public class EmisoraTest {
 	
-	private ImplementacionEmisora emisora1;// NOPMD by adrian on 15/12/15 19:46
-	private ImplementacionEmisora emisora2;// NOPMD by adrian on 15/12/15 19:46
-	private ImplementacionCancion cancion1;// NOPMD by adrian on 15/12/15 19:46
-	private ImplementacionCancion cancion2;// NOPMD by adrian on 15/12/15 19:46
-	private ImplementacionCancion cancion3;// NOPMD by adrian on 15/12/15 19:46
+	private ImplementacionEmisora emisora1;
+	private ImplementacionEmisora emisora2;
+	private ImplementacionEmisora emisora3;
 	
-	/**
-	 * SetUp de las pruebas de Emisora
-	 */
+	private ImplementacionCancion cancion1;
+	private ImplementacionCancion cancion2;
+	private ImplementacionCancion cancion3;
+	
 	@Before
 	public void setUp() {
 		
 		emisora1 = new ImplementacionEmisora("emisora1",0);
 		emisora2 = new ImplementacionEmisora("emisora2",0);
+		emisora3 = new ImplementacionEmisora("emisora3",0);
 		
 		cancion1 = new ImplementacionCancion("cancion1",4);
 		cancion2 = new ImplementacionCancion("cancion2",5);
@@ -41,128 +41,105 @@ public class EmisoraTest {
 
 	}
 	
-	/**
-	 * Test del metodo obtenerTitulo()
-	 */
 	@Test
-	public void obtenerTituloTestTrue() {
+	public void obtenerTituloTest() {
 		
-		assertTrue(emisora1.obtenerTitulo().equals("emisora1"));
+		for (String anyString : Iterables.toIterable(PrimitiveGenerators.printableStrings())) {
+			emisora1 = new ImplementacionEmisora(anyString,0);
+			
+			assertTrue(emisora1.obtenerTitulo().equals(anyString));
+		}
 	}
 	
-	/**
-	 * Test del metodo obtenerTitulo()
-	 */
-	@Test
-	public void obtenerTituloTestFalse() {
-		
-		assertFalse(emisora1.obtenerTitulo().equals("emisora2"));
-	}
 	
-	/**
-	 * Test del metodo agregar() para agregar un contenido a una emisora
-	 */
 	@Test
 	public void agregarTest(){
 
-		final List<Contenido> lista = new ArrayList<Contenido>();
-		
-		lista.add(cancion1);
-		lista.add(cancion2);
-		
-		emisora1.agregar(cancion1, null);
-		emisora1.agregar(cancion2, cancion1);
-		emisora2.agregar(cancion3, null);
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			emisora1.agregar(anyCancion, null);
+			
+			assertEquals(anyCancion,emisora1.buscar(anyCancion.obtenerTitulo()).get(0));
+		}
+	}
 	
-		//assertTrue(lista.equals(emisora1.obtenerListaReproduccion()));
-		assertEquals(lista,emisora1.obtenerListaReproduccion());
+	@Test
+	public void eliminarTest() {
 		
-		lista.clear();
+		List<Contenido> listaReproduccion = new ArrayList<Contenido>();
 		
-		//assertFalse(lista.equals(emisora1.obtenerListaReproduccion()));
-		
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			emisora1.agregar(anyCancion, null);
+			ImplementacionCancion otherCancion = new CancionGenerator().next();
+			listaReproduccion.add(anyCancion);
+			assertEquals(anyCancion,emisora1.buscar(anyCancion.obtenerTitulo()).get(0));
+			
+			emisora1.eliminar(anyCancion);
+			assertNotEquals(listaReproduccion,emisora1.buscar(anyCancion.obtenerTitulo()));
+			emisora1.eliminar(otherCancion);
+			assertNotEquals(listaReproduccion,emisora1.buscar(anyCancion.obtenerTitulo()));
+		}
 	}
 
-	/**
-	 * Test del metodo obtenerDuracion() para obtener la duración de una emisora.
-	 */
 	@Test
 	public void obtenerDuracionTest() {
 		
-		
-		emisora1.agregar(cancion1, null);
-		emisora1.agregar(cancion2, cancion1);
-		emisora2.agregar(cancion3, null);
-		
-		assertEquals(emisora1.obtenerDuracion(),9);
-		//assertEquals(emisora2.obtenerDuracion(),6);
-		//assertNotEquals(emisora1.obtenerDuracion(),0);
-		//assertNotEquals(emisora2.obtenerDuracion(),0);
+		for (int anyDuracion : Iterables.toIterable(PrimitiveGenerators.integers())) {
+			emisora1 = new ImplementacionEmisora("emisora1",anyDuracion);
+			
+			assertEquals(emisora1.obtenerDuracion(),anyDuracion);
+		}
 	}
+		
+
 	
-	/**
-	 * Test del metodo obtenerListaReproduccion() para obtener una l. de reproduccion.
-	 */
 	@Test
 	public void obtenerListaReproduccionTest() {
-		final List<Contenido> lista = new ArrayList<Contenido>();
-		lista.add(cancion1);
-		lista.add(cancion2);
 		
-		emisora1.agregar(cancion1, null);
-		emisora1.agregar(cancion2, cancion1);
+		CancionGenerator cGen = new CancionGenerator();
+		List<Contenido> listaReproduccion = new ArrayList<Contenido>();
+		
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(cGen)) {
+			emisora3.agregar(anyCancion, null);
+			int i = emisora3.obtenerListaReproduccion().size();
+			listaReproduccion.add(anyCancion);
+			
+			// Al insertar al final, se comprueba que la ultima cancion de la lista de reproduccion es igual a la añadida.
+			// ya que el equals de las listas no funciona.
+			assertEquals(anyCancion,emisora3.obtenerListaReproduccion().get(i-1));
+			
+		}
 
-		//assertTrue(lista.equals(emisora1.obtenerListaReproduccion()));
-		assertEquals(lista, emisora1.obtenerListaReproduccion());
 	}
 	
-	/**
-	 * Test del metodo buscar() que de un resultado positivo
-	 */
 	@Test
-	public void buscarTestTrue() {
-		final List<Contenido> lista = new ArrayList<Contenido>();
-		lista.add(cancion3);
-
-		emisora2.agregar(cancion3, null);
+	public void buscarTest() {
+		Generator<ImplementacionCancion> cGen = new CancionGenerator();
+		List<Contenido> lista = new ArrayList<Contenido>();
 		
-		assertFalse(lista.equals(emisora2.buscar("cancion1")));
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(cGen)) {
+			emisora3 = new ImplementacionEmisora("emisora3",0);
+			emisora3.agregar(anyCancion, null);
+			lista.add(anyCancion);
+			
+			// COMO HACER QUE LA LISTA SEA IGUAL?
+			assertEquals(anyCancion,emisora3.buscar(anyCancion.obtenerTitulo()).get(0));
+			
+		}
 	}
 	
-	/**
-	 * Test del metodo buscar() que de un resultado negativo
-	 */
 	
-	@Test
-	public void buscarTestFalse() {
-		final List<Contenido> lista = new ArrayList<Contenido>();
-		lista.add(cancion3);
+	class CancionGenerator implements Generator<ImplementacionCancion> {
+		Generator<Integer> iGen = PrimitiveGenerators.integers(-50,50);
+		Generator<String> sGen = PrimitiveGenerators.printableStrings();
 		
-		emisora2.agregar(cancion3, null);
+		public ImplementacionCancion next() {
+			String anyTitulo = sGen.next();
+			int anyDuracion = iGen.next();
+			
+			return new ImplementacionCancion(anyTitulo,anyDuracion);
+		}
 		
-		assertFalse(lista.equals(emisora2.buscar("cancion1")));
 	}
-	/**
-	 * Test del metodo eliminar() para eliminar un contenido de una emisora
-	 */
-	@Test
-	public void eliminar() {
-		final List<Contenido> lista = new ArrayList<Contenido>();
-		lista.add(cancion2);
-		
-		emisora1.agregar(cancion1, null);
-		emisora1.agregar(cancion2, cancion1);
-
-		//assertEquals(emisora1.obtenerDuracion(),9);
-		
-		emisora1.eliminar(cancion1);
-		
-		assertEquals(emisora1.obtenerDuracion(),cancion2.obtenerDuracion());
-
-		//assertTrue(lista.equals(emisora1.obtenerListaReproduccion()));
-		
-		//assertEquals(lista, emisora1.obtenerListaReproduccion());
-
-	}
+	
 	
 }
