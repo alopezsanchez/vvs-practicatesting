@@ -51,7 +51,7 @@ public class ImplementacionServidor implements Servidor{
 	 */
 	public String alta() {
 		
-		EtmPoint point = etmMonitor.createPoint("ImpelemtacionServidor:alta");
+		EtmPoint point = etmMonitor.createPoint("ImplementacionServidor:alta");
 		
 		try {
 			String tk = GenerarToken.generateToken();
@@ -70,7 +70,7 @@ public class ImplementacionServidor implements Servidor{
 	 */
 	public void baja(String token) throws TokenInvalidoException {
 		
-		EtmPoint point = etmMonitor.createPoint("ImpelemtacionServidor:baja");
+		EtmPoint point = etmMonitor.createPoint("ImplementacionServidor:baja");
 		
 		try {
 		
@@ -91,7 +91,7 @@ public class ImplementacionServidor implements Servidor{
 	 */
 	public void agregar(Contenido contenido, String token) throws TokenInvalidoException{
 		
-		EtmPoint point = etmMonitor.createPoint("ImpelemtacionServidor:agregar");
+		EtmPoint point = etmMonitor.createPoint("ImplementacionServidor:agregar");
 		
 		try {
 			if((token!=null) && (token.equals(MASTER_TOKEN))){
@@ -112,7 +112,7 @@ public class ImplementacionServidor implements Servidor{
 	 */
 	public void eliminar(Contenido contenido, String token) throws TokenInvalidoException {
 		
-		EtmPoint point = etmMonitor.createPoint("ImpelemtacionServidor:eliminar");
+		EtmPoint point = etmMonitor.createPoint("ImplementacionServidor:eliminar");
 		
 		try {
 			if((token!=null) && (token.equals(MASTER_TOKEN))){
@@ -131,7 +131,7 @@ public class ImplementacionServidor implements Servidor{
 	 */
 	public List<Contenido> buscar(String subcadena, String token) {
 		
-		EtmPoint point = etmMonitor.createPoint("ImpelemtacionServidor:buscar");
+		EtmPoint point = etmMonitor.createPoint("ImplementacionServidor:buscar");
 		
 		try {
 			List<Contenido> result = new ArrayList<Contenido>();
@@ -193,7 +193,7 @@ public class ImplementacionServidor implements Servidor{
 		
 	public boolean existeUsuario(String tk){
 		
-		EtmPoint point = etmMonitor.createPoint("ImpelemtacionServidor:existeUsuario");
+		EtmPoint point = etmMonitor.createPoint("ImplementacionServidor:existeUsuario");
 		
 		try {
 			boolean existe = false;
