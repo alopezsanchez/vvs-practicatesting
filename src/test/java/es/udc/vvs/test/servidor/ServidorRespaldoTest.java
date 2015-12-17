@@ -16,6 +16,12 @@ import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
 import es.udc.vvs.model.servidor.servidorimpl.ImplementacionServidor;
 import es.udc.vvs.model.servidor.servidorimpl.ImplementacionServidorRespaldo;
 import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
+import es.udc.vvs.test.servidor.ServidorTest.CancionGenerator;
+import es.udc.vvs.test.servidor.ServidorTest.UsuarioGenerator;
+import net.java.quickcheck.Generator;
+import net.java.quickcheck.generator.PrimitiveGenerators;
+import net.java.quickcheck.generator.iterable.Iterables;
+
 import static es.udc.vvs.model.util.servidorutil.ModelConstants.*;
 
 
@@ -82,8 +88,11 @@ public class ServidorRespaldoTest {
 	@Test
 	public void obtenerNombreTest() 
 	{
-		String esperado = "servidorConRespaldo";
-		assertEquals(esperado,servidor.obtenerNombre());
+		for (String anyString : Iterables.toIterable(PrimitiveGenerators.printableStrings())) {
+			servidor = new ImplementacionServidorRespaldo(servidorRespaldo,anyString);
+			assertEquals(anyString,servidor.obtenerNombre());
+		}
+		
 	}
 	
 	/**
@@ -91,7 +100,9 @@ public class ServidorRespaldoTest {
 	 */
 	@Test
 	public void altaUsuario(){
-		assertTrue(servidor.alta() != null);	
+		for(String anyToken : Iterables.toIterable(new UsuarioGenerator())) {
+			assertTrue(anyToken != null);
+		}
 	}
 	
 
@@ -100,10 +111,10 @@ public class ServidorRespaldoTest {
 	 */
 	@Test
 	public void bajaUsuario() throws TokenInvalidoException{
-		String tk = servidor.alta();
-
-			servidor.baja(tk);
-			assertFalse(servidor.existeUsuario(tk));
+		for(String anyToken : Iterables.toIterable(new UsuarioGenerator())) {
+			servidor.baja(anyToken);
+			assertFalse(servidor.existeUsuario(anyToken));
+		}
 
 	}
 	
@@ -123,18 +134,20 @@ public class ServidorRespaldoTest {
 	 */
 	@Test
 	public void agregarTest() {
-		boolean agregado = true;
-		try {
-			servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD",5), MASTER_TOKEN);
-		} catch (TokenInvalidoException e) {
-			agregado = false;
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			boolean agregado = true;
+			try {
+				servidor.agregar(anyCancion, MASTER_TOKEN);
+			} catch (TokenInvalidoException e) {
+				agregado = false;
+			}
+			assertTrue(agregado);
+			
+			List<Contenido> resultado = servidor.buscar(anyCancion.obtenerTitulo(), token);
+			int i = resultado.size();
+			//Comprueba si el contenido añadido es igual al ultimo elemento de la lista
+			assertEquals(anyCancion,resultado.get(i-1));
 		}
-		assertTrue(agregado);
-		
-		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
-		assertEquals(1,resultado.size());
-		assertEquals("PUBLICIDAD",resultado.get(0).obtenerTitulo());
-		assertEquals(5,resultado.get(0).obtenerDuracion());
 	}
 	
 	
@@ -146,7 +159,9 @@ public class ServidorRespaldoTest {
 	@Test(expected = TokenInvalidoException.class)
 	public void agregarTokenInvalidoTest() throws TokenInvalidoException 
 	{
-		servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), token);
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			servidor.agregar(anyCancion, token);
+		}
 	}
 
 	
@@ -158,7 +173,9 @@ public class ServidorRespaldoTest {
 	@Test(expected = TokenInvalidoException.class)
 	public void agregarTokenNuloTest() throws TokenInvalidoException 
 	{
-		servidor.agregar(new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5), null);
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			servidor.agregar(anyCancion, null);
+		}
 	}
 	
 	
@@ -204,19 +221,22 @@ public class ServidorRespaldoTest {
 	 */
 	@Test(expected = TokenInvalidoException.class)
 	public void eliminarTokenInvalidoTest() throws TokenInvalidoException {
-		boolean agregado = true;
-		Contenido contenido = new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5);
-		try {
-			servidor.agregar(contenido, MASTER_TOKEN);
-		} catch (TokenInvalidoException e) {
-			agregado = false;
-		}
-		assertTrue(agregado);
 		
-		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
-		assertEquals(1,resultado.size());
-
-		servidor.eliminar(contenido, token);
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			boolean agregado = true;	
+			try {
+				servidor.agregar(anyCancion, MASTER_TOKEN);
+			} catch (TokenInvalidoException e) {
+				agregado = false;
+			}
+			
+			assertTrue(agregado);
+			
+			List<Contenido> resultado = servidor.buscar(anyCancion.obtenerTitulo(), token);
+			assertEquals(1,resultado.size());
+			
+			servidor.eliminar(anyCancion, token);
+		}
 	}
 	
 	
@@ -227,23 +247,23 @@ public class ServidorRespaldoTest {
 	 */
 	@Test(expected = TokenInvalidoException.class)
 	public void eliminarTokenNuloTest() throws TokenInvalidoException {
-		boolean agregado = true;
 		
-		Contenido contenido = new ImplementacionAnuncio("PUBLICIDAD dfsdfsd",5);
-		
-		try {
-			servidor.agregar(contenido, MASTER_TOKEN);
-		} catch (TokenInvalidoException e) {
-			agregado = false;
-		}
-		
-		assertTrue(agregado);
-		
-		List<Contenido> resultado = servidor.buscar("PUBLICIDAD", token);
-		assertEquals(1,resultado.size());
-		
-		servidor.eliminar(contenido, null);
-		
+		for (ImplementacionCancion anyCancion : Iterables.toIterable(new CancionGenerator())) {
+			boolean agregado = true;
+						
+			try {
+				servidor.agregar(anyCancion, MASTER_TOKEN);
+			} catch (TokenInvalidoException e) {
+				agregado = false;
+			}
+			
+			assertTrue(agregado);
+			
+			List<Contenido> resultado = servidor.buscar(anyCancion.obtenerTitulo(), token);
+			assertEquals(1,resultado.size());
+			
+			servidor.eliminar(anyCancion, null);
+		}	
 	}
 	
 	
@@ -316,4 +336,29 @@ public class ServidorRespaldoTest {
 		assertEquals(ImplementacionAnuncio.class,resultado.get(8).getClass());
 	}
 
+	
+	class UsuarioGenerator implements Generator<String> {
+		Generator<String> sGen = PrimitiveGenerators.printableStrings();
+		
+		public String next() {
+			String anyToken = servidor.alta();
+			
+			return anyToken;
+		}
+		
+	}
+	
+	
+	class CancionGenerator implements Generator<ImplementacionCancion> {
+		Generator<Integer> iGen = PrimitiveGenerators.integers(-50,50);
+		Generator<String> sGen = PrimitiveGenerators.printableStrings();
+		
+		public ImplementacionCancion next() {
+			String anyTitulo = sGen.next();
+			int anyDuracion = iGen.next();
+			
+			return new ImplementacionCancion(anyTitulo,anyDuracion);
+		}
+		
+	}
 }

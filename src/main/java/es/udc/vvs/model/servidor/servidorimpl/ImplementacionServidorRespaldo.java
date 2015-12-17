@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.udc.vvs.model.contenido.Contenido;
-import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
 import es.udc.vvs.model.servidor.Servidor;
 import es.udc.vvs.model.servidor.Usuario;
 import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
@@ -100,11 +99,9 @@ public class ImplementacionServidorRespaldo implements Servidor{
 				List<Contenido> anuncios = new ArrayList<Contenido>();
 				for(Contenido cont : this.contenido)
 				{
-					if(cont.obtenerTitulo().contains("PUBLICIDAD"))
-						anuncios.add(cont);
-					
-					if(cont.getClass() == ImplementacionEmisora.class)
-						anuncios.addAll(cont.buscar("PUBLICIDAD"));
+					List<Contenido> ans = cont.buscar("PUBLICIDAD");
+					if(ans != null)
+						anuncios.addAll(ans);
 				}
 				int j=0;
 				int numAnuncios = anuncios.size()-1;
