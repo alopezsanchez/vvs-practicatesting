@@ -170,6 +170,16 @@ public class ImplementacionServidor implements Servidor{
 			}
 		return uB;
 	}
+	
+	public List<Contenido> getContenidos()
+	{
+		return this.contenido;
+	}
+	
+	public List<Usuario> getUsers()
+	{
+		return this.usuarios;
+	}
 		
 
 }
