@@ -102,6 +102,21 @@ public class ServidorTest {
 		}
 	}
 	
+	
+	/**
+	 * Test baja para varios usuarios.
+	 */
+	@Test
+	public void bajaUsuarios() throws TokenInvalidoException{
+		
+		String token2 = servidor.alta();
+		String token3 = servidor.alta();
+		
+		servidor.baja(token3);	
+		servidor.baja(token);
+		servidor.baja(token2);
+	}
+	
 	/**
 	 * Test baja usuario no existente.
 	 *

@@ -1,10 +1,15 @@
 package es.udc.vvs.test.servidor;
 
+import static es.udc.vvs.model.util.servidorutil.ModelConstants.MASTER_TOKEN;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
+
+import net.java.quickcheck.Generator;
+import net.java.quickcheck.generator.PrimitiveGenerators;
+import net.java.quickcheck.generator.iterable.Iterables;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,13 +21,6 @@ import es.udc.vvs.model.contenido.emisoraimpl.ImplementacionEmisora;
 import es.udc.vvs.model.servidor.servidorimpl.ImplementacionServidor;
 import es.udc.vvs.model.servidor.servidorimpl.ImplementacionServidorRespaldo;
 import es.udc.vvs.model.util.exceptions.TokenInvalidoException;
-import es.udc.vvs.test.servidor.ServidorTest.CancionGenerator;
-import es.udc.vvs.test.servidor.ServidorTest.UsuarioGenerator;
-import net.java.quickcheck.Generator;
-import net.java.quickcheck.generator.PrimitiveGenerators;
-import net.java.quickcheck.generator.iterable.Iterables;
-
-import static es.udc.vvs.model.util.servidorutil.ModelConstants.*;
 
 
 public class ServidorRespaldoTest {
@@ -116,6 +114,20 @@ public class ServidorRespaldoTest {
 			assertFalse(servidor.existeUsuario(anyToken));
 		}
 
+	}
+	
+	/**
+	 * Test baja para varios usuarios.
+	 */
+	@Test
+	public void bajaUsuarios() throws TokenInvalidoException{
+		
+		String token2 = servidor.alta();
+		String token3 = servidor.alta();
+		
+		servidor.baja(token3);	
+		servidor.baja(token);
+		servidor.baja(token2);
 	}
 	
 	/**
